@@ -42,7 +42,7 @@ export function SuccessView({ bundle, onDownload }: SuccessViewProps) {
         const downloadUrl = URL.createObjectURL(pngBlob);
         const anchor = document.createElement("a");
         anchor.href = downloadUrl;
-        anchor.download = `tails-and-tasks-${bundle.id}-story.png`;
+        anchor.download = `paws-and-tasks-${bundle.id}-story.png`;
         document.body.appendChild(anchor);
         anchor.click();
         anchor.remove();
@@ -55,7 +55,7 @@ export function SuccessView({ bundle, onDownload }: SuccessViewProps) {
       // Fallback: download SVG if canvas encode fails
       const anchor = document.createElement("a");
       anchor.href = url;
-      anchor.download = `tails-and-tasks-${bundle.id}-story.svg`;
+      anchor.download = `paws-and-tasks-${bundle.id}-story.svg`;
       document.body.appendChild(anchor);
       anchor.click();
       anchor.remove();
@@ -68,7 +68,7 @@ export function SuccessView({ bundle, onDownload }: SuccessViewProps) {
     <section className="success" aria-labelledby="success-heading">
       <div className="success__inner">
         <div className="success__copy">
-          <p className="success__brand">Tails &amp; Tasks</p>
+          <p className="success__brand">Paws &amp; Tasks</p>
           <h2 id="success-heading" className="success__headline">
             Your toolkit is on the way!
           </h2>

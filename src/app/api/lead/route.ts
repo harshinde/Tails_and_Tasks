@@ -1,4 +1,9 @@
 import { NextResponse } from "next/server";
+import { createResendClient } from "@/lib/resend";
+import {
+  sendToolkitEmail,
+  upsertLeadContact,
+} from "@/lib/toolkit-delivery";
 import type { BundleId } from "@/lib/types";
 
 const VALID_BUNDLES: BundleId[] = [
@@ -7,18 +12,6 @@ const VALID_BUNDLES: BundleId[] = [
   "guardian",
   "best-friend",
 ];
-
-/**
- * MVP lead capture endpoint.
- * Persists the email ↔ bundle_id association shape expected by future app sync.
- * Swap the in-memory store for Mailchimp / ConvertKit / your database.
- */
-const leads: Array<{
-  firstName: string;
-  email: string;
-  bundleId: BundleId;
-  createdAt: string;
-}> = [];
 
 export async function POST(request: Request) {
   try {
@@ -32,7 +25,7 @@ export async function POST(request: Request) {
     const email = body.email?.trim().toLowerCase() ?? "";
     const bundleId = body.bundleId as BundleId | undefined;
 
-    if (!firstName || firstName.length < 1) {
+    if (!firstName) {
       return NextResponse.json(
         { error: "First name is required." },
         { status: 400 },
@@ -54,30 +47,37 @@ export async function POST(request: Request) {
       );
     }
 
-    const record = {
+    const resend = createResendClient();
+    if (!resend) {
+      return NextResponse.json(
+        {
+          error:
+            "Email delivery is not configured. Missing RESEND_API_KEY / resend_api_key.",
+        },
+        { status: 503 },
+      );
+    }
+
+    await upsertLeadContact(resend, { firstName, email, bundleId });
+    const emailResult = await sendToolkitEmail({
+      resend,
       firstName,
       email,
       bundleId,
-      createdAt: new Date().toISOString(),
-    };
-
-    leads.push(record);
-
-    // Ready for ESP webhook / CRM sync:
-    // await convertKit.subscribe({ email, firstName, tags: [bundleId] })
+    });
 
     return NextResponse.json({
       ok: true,
       lead: {
-        email: record.email,
-        bundleId: record.bundleId,
-        createdAt: record.createdAt,
+        email,
+        bundleId,
+        createdAt: new Date().toISOString(),
       },
+      emailId: emailResult?.id ?? null,
     });
-  } catch {
-    return NextResponse.json(
-      { error: "Unable to capture lead." },
-      { status: 500 },
-    );
+  } catch (error) {
+    const message =
+      error instanceof Error ? error.message : "Unable to capture lead.";
+    return NextResponse.json({ error: message }, { status: 500 });
   }
 }
