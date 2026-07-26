@@ -2,7 +2,7 @@
 
 Lightweight tech + UX architecture for the live MVP.
 
-**Companion doc:** [PRD.md](./PRD.md)
+**Companion docs:** [PRD.md](./PRD.md) · [TOOLKIT_CATALOG.md](./TOOLKIT_CATALOG.md)
 
 ---
 

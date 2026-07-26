@@ -193,7 +193,7 @@ Events are pushed to `window.dataLayer` and mirrored on `window.__pathfinderEven
 
 ## 11. Future roadmap (not in this MVP)
 
-1. Ship real PDF toolkit assets per path  
+1. Ship real PDF toolkit assets per path — see full idea checklist in [TOOLKIT_CATALOG.md](./TOOLKIT_CATALOG.md) (65 ideas across 4 archetypes)
 2. Stronger Instagram handle + Story template branding  
 3. A/B-ready analytics / experiment hooks  
 4. Lottie/Rive mascot pipeline  
