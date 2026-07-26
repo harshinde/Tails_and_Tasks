@@ -1,0 +1,8 @@
+# Local Workers preview secrets (wrangler). Do not commit real keys.
+# Copy to .dev.vars and fill in values:
+#
+#   cp .dev.vars.example .dev.vars
+#
+NEXTJS_ENV=development
+RESEND_API_KEY=re_xxxxxxxxx
+RESEND_FROM_EMAIL=Paws & Tasks <hello@pawsandtasks.com>

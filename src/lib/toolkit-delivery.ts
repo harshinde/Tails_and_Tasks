@@ -1,7 +1,5 @@
-import { readFile } from "node:fs/promises";
-import path from "node:path";
 import type { Resend } from "resend";
-import { getBundleById } from "@/lib/bundles";
+import { getBundleById, SITE_URL } from "@/lib/bundles";
 import { getResendFromEmail } from "@/lib/resend";
 import type { BundleId } from "@/lib/types";
 
@@ -108,15 +106,25 @@ export async function sendToolkitEmail({
   return data;
 }
 
+/**
+ * Prefer a public URL attachment (Workers-friendly).
+ * Resend fetches the file from `path` when sending.
+ */
 async function loadToolkitAttachment(bundleId: BundleId) {
   const filename = `${bundleId}.pdf`;
-  const filePath = path.join(process.cwd(), "public", "toolkits", filename);
+  const base = (
+    process.env.NEXT_PUBLIC_SITE_URL ||
+    process.env.SITE_URL ||
+    SITE_URL
+  ).replace(/\/$/, "");
+  const url = `${base}/toolkits/${filename}`;
 
   try {
-    const content = await readFile(filePath);
+    const response = await fetch(url, { method: "HEAD" });
+    if (!response.ok) return null;
     return {
       filename,
-      content,
+      path: url,
     };
   } catch {
     return null;

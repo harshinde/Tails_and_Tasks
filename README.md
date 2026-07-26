@@ -2,7 +2,9 @@
 
 Interactive lead-capture landing page that segments Instagram pet parents into toolkit bundles via a lightweight Pathfinder quiz.
 
-## Quick start
+Hosted on **Cloudflare Workers** (OpenNext) at [pawsandtasks.com](https://pawsandtasks.com).
+
+## Quick start (local)
 
 ```bash
 npm install
@@ -12,12 +14,65 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000).
 
+To preview in the Cloudflare Workers runtime locally:
+
+```bash
+cp .dev.vars.example .dev.vars   # add Resend key
+npm run preview
+```
+
+## Deploy to Cloudflare Workers
+
+### One-time Cloudflare setup
+
+1. Install Wrangler login on the machine that deploys (or use Workers Builds CI):
+   ```bash
+   npx wrangler login
+   ```
+2. In Cloudflare Dashboard → **Workers & Pages** → your worker (`paws-and-tasks`)  
+   or create it on first `npm run deploy`.
+3. Attach custom domain `pawsandtasks.com` (and optional `www`) to the Worker.
+4. Add secrets (Workers → Settings → Variables and Secrets):
+   - `RESEND_API_KEY` = your Resend API key (**Secret**)
+   - optional override: `RESEND_FROM_EMAIL`
+   - optional: `NEXT_PUBLIC_SITE_URL=https://pawsandtasks.com`
+
+CLI alternative for the secret:
+
+```bash
+npx wrangler secret put RESEND_API_KEY
+```
+
+### Deploy from this repo
+
+```bash
+npm run deploy
+```
+
+That builds with OpenNext and deploys the Worker named `paws-and-tasks` (see `wrangler.jsonc`).
+
+### Git-connected deploys (recommended)
+
+In Cloudflare → Workers & Pages → your project → **Settings → Builds**:
+- Connect this GitHub repo
+- Build command: `npx opennextjs-cloudflare build` (or `npm run deploy`’s build half)
+- Deploy command: `npx opennextjs-cloudflare deploy`
+- Root directory: `/`
+- Add the same `RESEND_API_KEY` secret in the dashboard
+
+Exact CI fields can vary; Cloudflare’s Next.js Workers guide uses:
+
+```bash
+npm run deploy
+```
+
 ## Environment
 
 | Variable | Required | Description |
 | --- | --- | --- |
-| `RESEND_API_KEY` or `resend_api_key` | Yes | Resend API key (Cursor Secret or `.env.local`) |
+| `RESEND_API_KEY` or `resend_api_key` | Yes | Resend API key |
 | `RESEND_FROM_EMAIL` | No | Defaults to `Paws & Tasks <hello@pawsandtasks.com>` |
+| `NEXT_PUBLIC_SITE_URL` | No | Defaults to `https://pawsandtasks.com` (used for PDF attachment URLs) |
 
 ## UX states
 
@@ -32,7 +87,7 @@ Open [http://localhost:3000](http://localhost:3000).
 
 1. Create a Resend **Contact** (`email`, `firstName`, optional `bundle_id` property)
 2. Send a toolkit email from your verified `pawsandtasks.com` domain
-3. Attach `public/toolkits/{bundleId}.pdf` when that file exists
+3. Attach `https://pawsandtasks.com/toolkits/{bundleId}.pdf` when that public file exists
 
 Add PDFs as:
 
@@ -60,8 +115,9 @@ Custom events are pushed to `window.dataLayer` and mirrored on `window.__pathfin
 ## Scripts
 
 ```bash
-npm run dev
-npm run build
-npm run start
+npm run dev        # Next.js local dev
+npm run preview    # OpenNext + Workers local preview
+npm run deploy     # Build + deploy to Cloudflare Workers
+npm run build      # Next.js build only
 npm run lint
 ```
