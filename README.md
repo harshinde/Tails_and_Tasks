@@ -4,6 +4,11 @@ Interactive lead-capture landing page that segments Instagram pet parents into t
 
 Hosted on **Cloudflare Workers** (OpenNext) at [pawsandtasks.com](https://pawsandtasks.com).
 
+## Product docs
+
+- [PRD (as-built)](./docs/PRD.md)
+- [Tech & UX architecture](./docs/ARCHITECTURE.md)
+
 ## Quick start (local)
 
 ```bash
@@ -101,6 +106,17 @@ Behavior:
 
 Hero fast-track always maps to the **newcomer / Welcome Home** kit.  
 `POST /api/lead` remains as a thin compatibility shim.
+
+Add PDFs as:
+
+```text
+public/toolkits/newcomer.pdf
+public/toolkits/guide.pdf
+public/toolkits/guardian.pdf
+public/toolkits/best-friend.pdf
+```
+
+Until those files exist, the confirmation email still sends (without attachment).
 ## Analytics events
 
 Custom events are pushed to `window.dataLayer` and mirrored on `window.__pathfinderEvents`:
