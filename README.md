@@ -81,23 +81,26 @@ Do **not** use plain `npm run build` / `npx wrangler deploy` alone — that skip
 
 ## Lead capture + PDF delivery (Resend)
 
-`POST /api/lead` will:
+`POST /api/subscribe` accepts:
 
-1. Create a Resend **Contact** (`email`, `firstName`, optional `bundle_id` property)
-2. Send a toolkit email from your verified `pawsandtasks.com` domain
-3. Attach `https://pawsandtasks.com/toolkits/{bundleId}.pdf` when that public file exists
-
-Add PDFs as:
-
-```text
-public/toolkits/newcomer.pdf
-public/toolkits/guide.pdf
-public/toolkits/guardian.pdf
-public/toolkits/best-friend.pdf
+```json
+{
+  "source": "homepage_hero | modal_quiz",
+  "firstName": "Ada",
+  "email": "ada@example.com",
+  "pathId": "newcomer",
+  "quizData": { "q1_answer": null, "q2_answer": null }
+}
 ```
 
-Until those files exist, the confirmation email still sends (without attachment).
+Behavior:
 
+1. Create/update a Resend **Contact** with `path_id` / `source` (+ quiz answers when present)
+2. Send a toolkit email from your verified `pawsandtasks.com` domain
+3. Attach `https://pawsandtasks.com/toolkits/{pathId}.pdf` when that public file exists
+
+Hero fast-track always maps to the **newcomer / Welcome Home** kit.  
+`POST /api/lead` remains as a thin compatibility shim.
 ## Analytics events
 
 Custom events are pushed to `window.dataLayer` and mirrored on `window.__pathfinderEvents`:
@@ -105,9 +108,12 @@ Custom events are pushed to `window.dataLayer` and mirrored on `window.__pathfin
 | Event | Trigger |
 | --- | --- |
 | `page_view` | Landing load (`utm_source`, `utm_campaign`) |
-| `pathfinder_started` | Primary CTA click |
+| `pathfinder_started` | Scroll/jump to Pathfinder section |
 | `bundle_selected` | Path card click (`bundle_id`, `bundle_name`) |
-| `lead_captured` | Successful form submit (`bundle_id`, `email_domain`) |
+| `quiz_step_completed` | Quiz answer selected (`step`, `answer`) |
+| `hero_lead_captured` | Hero form success |
+| `quiz_lead_captured` | Quiz modal form success |
+| `lead_captured` | Any successful subscribe |
 | `story_asset_downloaded` | Story graphic download (`bundle_id`) |
 
 ## Scripts

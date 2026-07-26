@@ -1,7 +1,16 @@
 import type { Resend } from "resend";
 import { getBundleById, SITE_URL } from "@/lib/bundles";
 import { getResendFromEmail } from "@/lib/resend";
-import type { BundleId } from "@/lib/types";
+import type { BundleId, LeadSource } from "@/lib/types";
+
+interface ContactArgs {
+  firstName: string;
+  email: string;
+  pathId: BundleId;
+  source: LeadSource;
+  q1Answer?: string | null;
+  q2Answer?: string | null;
+}
 
 interface DeliverToolkitArgs {
   resend: Resend;
@@ -10,16 +19,31 @@ interface DeliverToolkitArgs {
   bundleId: BundleId;
 }
 
-export async function upsertLeadContact(
-  resend: Resend,
-  args: { firstName: string; email: string; bundleId: BundleId },
-) {
+export async function upsertLeadContact(resend: Resend, args: ContactArgs) {
+  const properties: Record<string, string> = {
+    bundle_id: args.pathId,
+    path_id: args.pathId,
+    source: args.source,
+  };
+
+  if (args.q1Answer) properties.q1_answer = args.q1Answer;
+  if (args.q2Answer) properties.q2_answer = args.q2Answer;
+
   const attempts = [
     {
       email: args.email,
       firstName: args.firstName,
       unsubscribed: false,
-      properties: { bundle_id: args.bundleId },
+      properties,
+    },
+    {
+      email: args.email,
+      firstName: args.firstName,
+      unsubscribed: false,
+      properties: {
+        bundle_id: args.pathId,
+        source: args.source,
+      },
     },
     {
       email: args.email,
