@@ -193,11 +193,12 @@ Events are pushed to `window.dataLayer` and mirrored on `window.__pathfinderEven
 
 ## 11. Future roadmap (not in this MVP)
 
-1. Ship real PDF toolkit assets per path — see full idea checklist in [TOOLKIT_CATALOG.md](./TOOLKIT_CATALOG.md) (65 ideas across 4 archetypes)
-2. Stronger Instagram handle + Story template branding  
-3. A/B-ready analytics / experiment hooks  
-4. Lottie/Rive mascot pipeline  
-5. Port tagged leads into future app DB (especially Guide → daily practice tracker beta)
+1. Ship real PDF toolkit assets per path — see [TOOLKIT_CATALOG.md](./TOOLKIT_CATALOG.md) and [PDF_DESIGN.md](./PDF_DESIGN.md) (start with ungated Home Safety Checklist)
+2. Ungated `/resources` webpage for tasting-menu PDFs (immediate value → Pathfinder upsell)
+3. Stronger Instagram handle + Story template branding  
+4. A/B-ready analytics / experiment hooks  
+5. Lottie/Rive mascot pipeline  
+6. Port tagged leads into future app DB (especially Guide → daily practice tracker beta)
 
 ---
 
