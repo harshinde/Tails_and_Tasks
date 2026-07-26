@@ -15,9 +15,10 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Pathfinder | Tails & Tasks",
+  title: "Pathfinder | Paws & Tasks",
   description:
-    "Take the 30-second Pathfinder quiz to unlock a free custom pet parenting toolkit from Tails & Tasks.",
+    "Take the 30-second Pathfinder quiz to unlock a free custom pet parenting toolkit from Paws & Tasks.",
+  metadataBase: new URL("https://pawsandtasks.com"),
   openGraph: {
     title: "What kind of pet parent are you?",
     description:

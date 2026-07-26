@@ -53,7 +53,7 @@ export function StoryMascot({ bundleId, title }: StoryMascotProps) {
         fontSize="22"
         letterSpacing="3"
       >
-        TAILS &amp; TASKS
+        PAWS &amp; TASKS
       </text>
       <text
         x="180"
@@ -131,7 +131,7 @@ export function StoryMascot({ bundleId, title }: StoryMascotProps) {
         fontSize="15"
         fontWeight="700"
       >
-        @tailsandtasks
+        @pawsandtasks
       </text>
     </svg>
   );

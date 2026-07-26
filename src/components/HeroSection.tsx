@@ -15,7 +15,7 @@ export function HeroSection({ onStart }: HeroSectionProps) {
       </div>
       <div className="hero__stage">
         <div className="hero__copy">
-          <p className="hero__brand">Tails &amp; Tasks</p>
+          <p className="hero__brand">Paws &amp; Tasks</p>
           <h1 id="hero-heading" className="hero__headline">
             What kind of pet parent are you?
           </h1>

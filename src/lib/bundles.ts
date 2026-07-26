@@ -40,4 +40,7 @@ export function getBundleById(id: string | null | undefined) {
   return BUNDLES.find((bundle) => bundle.id === id) ?? null;
 }
 
-export const INSTAGRAM_URL = "https://www.instagram.com/";
+export const BRAND_NAME = "Paws & Tasks";
+export const BRAND_HANDLE = "@pawsandtasks";
+export const SITE_URL = "https://pawsandtasks.com";
+export const INSTAGRAM_URL = "https://www.instagram.com/pawsandtasks";
