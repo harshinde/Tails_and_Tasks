@@ -29,7 +29,7 @@ npm run preview
    ```bash
    npx wrangler login
    ```
-2. In Cloudflare Dashboard → **Workers & Pages** → your worker (`paws-and-tasks`)  
+2. In Cloudflare Dashboard → **Workers & Pages** → your worker (`tails-and-tasks`)  
    or create it on first `npm run deploy`.
 3. Attach custom domain `pawsandtasks.com` (and optional `www`) to the Worker.
 4. Add secrets (Workers → Settings → Variables and Secrets):
@@ -49,23 +49,21 @@ npx wrangler secret put RESEND_API_KEY
 npm run deploy
 ```
 
-That builds with OpenNext and deploys the Worker named `paws-and-tasks` (see `wrangler.jsonc`).
+That builds with OpenNext and deploys the Worker named `tails-and-tasks` (see `wrangler.jsonc`).
 
 ### Git-connected deploys (recommended)
 
-In Cloudflare → Workers & Pages → your project → **Settings → Builds**:
-- Connect this GitHub repo
-- Build command: `npx opennextjs-cloudflare build` (or `npm run deploy`’s build half)
-- Deploy command: `npx opennextjs-cloudflare deploy`
-- Root directory: `/`
-- Add the same `RESEND_API_KEY` secret in the dashboard
+In Cloudflare → **Workers & Pages** → `tails-and-tasks` → **Settings → Build**:
 
-Exact CI fields can vary; Cloudflare’s Next.js Workers guide uses:
+| Setting | Value |
+| --- | --- |
+| Build command | `npx opennextjs-cloudflare build` |
+| Deploy command | `npx opennextjs-cloudflare deploy` |
+| Non-production deploy | `npx opennextjs-cloudflare upload` |
 
-```bash
-npm run deploy
-```
+Also set the `RESEND_API_KEY` secret under **Settings → Variables and Secrets** (already supported).
 
+Do **not** use plain `npm run build` / `npx wrangler deploy` alone — that skips the OpenNext bundle and fails.
 ## Environment
 
 | Variable | Required | Description |
