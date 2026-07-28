@@ -107,6 +107,14 @@ Convert Instagram traffic into tagged email leads by offering free, path-relevan
 - **CTA:** Send My Free Kit  
 - **Secondary:** Take the Pathfinder below
 
+### CTA hierarchy (user-facing)
+
+| Surface | Primary CTA | Intent |
+| --- | --- | --- |
+| Hero fast-track | **Send My Free Kit** | Direct, honest Welcome Home delivery |
+| Quiz email step | **Unlock My Custom Kit** | Earned / curiosity after stage + answers |
+| Ungated `/resources` sample | **Unlock the full [Stage] Kit** | Upsell from tasting-menu PDF to email bundle |
+
 ### Pathfinder paths
 
 | Path ID | Title | Bundle name |
@@ -193,11 +201,12 @@ Events are pushed to `window.dataLayer` and mirrored on `window.__pathfinderEven
 
 ## 11. Future roadmap (not in this MVP)
 
-1. Ship real PDF toolkit assets per path  
-2. Stronger Instagram handle + Story template branding  
-3. A/B-ready analytics / experiment hooks  
-4. Lottie/Rive mascot pipeline  
-5. Port tagged leads into future app DB (especially Guide → daily practice tracker beta)
+1. Ship real PDF toolkit assets per path — see [TOOLKIT_CATALOG.md](./TOOLKIT_CATALOG.md) and [PDF_DESIGN.md](./PDF_DESIGN.md) (start with ungated Home Safety Checklist)
+2. Ungated `/resources` webpage for tasting-menu PDFs (immediate value → Pathfinder upsell)
+3. Stronger Instagram handle + Story template branding  
+4. A/B-ready analytics / experiment hooks  
+5. Lottie/Rive mascot pipeline  
+6. Port tagged leads into future app DB (especially Guide → daily practice tracker beta)
 
 ---
 
