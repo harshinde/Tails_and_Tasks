@@ -101,17 +101,32 @@ Host a public resources page (e.g. `/resources` or `/free-tools`) that:
 
 1. Displays/previews each tasting-menu PDF  
 2. Offers immediate download (no email gate)  
-3. Shows a path-specific hook CTA → Pathfinder / full kit opt-in  
+3. Shows a path-specific hook CTA → email opt-in for the full kit  
+
+**CTA copy pairing**
+
+| Surface | CTA |
+| --- | --- |
+| Hero | Send My Free Kit |
+| Quiz step 3 | Unlock My Custom Kit |
+| Resources sample card | Unlock the full [Stage] Kit |
+
+Examples for resources hooks:
+
+- Newcomer sample → **Unlock the full Welcome Kit**
+- Guide sample → **Unlock the full Behavior & Habit Mastery Kit**
+- Guardian sample → **Unlock the full Health & Nutrition Vault**
+- Best Friend sample → **Unlock the full Lifestyle & Play Bundle**
 
 ### The 5 recommended ungated PDFs
 
 | # | Asset | Teases path | Why it works | Hook CTA |
 | --- | --- | --- | --- | --- |
-| 1 | **Home Safety Checklist for Pet Owners** | Newcomer | High-anxiety pain point; room-by-room checklist = instant relief | “Want the complete guide to bringing them home? Take the Pathfinder to unlock the full Welcome Kit.” |
-| 2 | **Pet Care Schedule Templates** | Guide* | Brand-aligned structure for feeding/walks/training times | “Now that your schedule is set, need help filling it with the right training? Unlock Behavior & Habit Mastery.” |
-| 3 | **Pet Health Record Sheets** | Guardian | Pure utility; printable ledger builds trust | “Keep their records safe, and learn how to extend their longevity. Unlock the Health & Nutrition Vault.” |
-| 4 | **DIY Pet Toy Templates** | Best Friend | Visual, fun, bridges IG content → product | “Loved making this? Get recipes, travel guides, and more in the Lifestyle & Play Bundle.” |
-| 5 | **Pet Behavior Troubleshooting Guide** | Guide (closer) | Behavior pain is a top content trigger; proves authority | “Fixing the problem is step one. Building a lifelong habit is step two. Take the Pathfinder for daily progress trackers.” |
+| 1 | **Home Safety Checklist for Pet Owners** | Newcomer | High-anxiety pain point; room-by-room checklist = instant relief | “Want the complete guide to bringing them home? **Unlock the full Welcome Kit.**” |
+| 2 | **Pet Care Schedule Templates** | Guide* | Brand-aligned structure for feeding/walks/training times | “Schedule set? **Unlock the full Behavior & Habit Mastery Kit.**” |
+| 3 | **Pet Health Record Sheets** | Guardian | Pure utility; printable ledger builds trust | “Keep their records safe. **Unlock the full Health & Nutrition Vault.**” |
+| 4 | **DIY Pet Toy Templates** | Best Friend | Visual, fun, bridges IG content → product | “Loved making this? **Unlock the full Lifestyle & Play Bundle.**” |
+| 5 | **Pet Behavior Troubleshooting Guide** | Guide (closer) | Behavior pain is a top content trigger; proves authority | “Fixed the problem? **Unlock My Custom Kit** via the stage matcher for daily progress trackers.” |
 
 \*Schedule templates live under Newcomer in the full catalog, but the tasting-menu narrative positions them as a bridge into Guide/training habits. Keep filename/path tagging explicit when shipping (`tease_path` metadata).
 
@@ -135,7 +150,7 @@ Then: Health Record Sheets → DIY Toy Templates → Care Schedule → Behavior 
 ```text
 /resources (or /free-tools)
   ├─ card grid of 5 ungated PDFs (preview + Download)
-  ├─ hook CTA per card → Pathfinder / subscribe
+  ├─ hook CTA per card → “Unlock the full [Stage] Kit” → subscribe
   └─ files served from public/resources/*.pdf
        (separate from gated /toolkits/{pathId}.pdf bundles)
 ```

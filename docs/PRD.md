@@ -107,6 +107,14 @@ Convert Instagram traffic into tagged email leads by offering free, path-relevan
 - **CTA:** Send My Free Kit  
 - **Secondary:** Take the Pathfinder below
 
+### CTA hierarchy (user-facing)
+
+| Surface | Primary CTA | Intent |
+| --- | --- | --- |
+| Hero fast-track | **Send My Free Kit** | Direct, honest Welcome Home delivery |
+| Quiz email step | **Unlock My Custom Kit** | Earned / curiosity after stage + answers |
+| Ungated `/resources` sample | **Unlock the full [Stage] Kit** | Upsell from tasting-menu PDF to email bundle |
+
 ### Pathfinder paths
 
 | Path ID | Title | Bundle name |

@@ -220,7 +220,7 @@ export function QuizModal({
                   className="btn btn--primary btn--block"
                   disabled={submitting}
                 >
-                  {submitting ? "Unlocking…" : "Unlock My Free Toolkit"}
+                  {submitting ? "Unlocking…" : "Unlock My Custom Kit"}
                 </button>
 
                 <p className="modal__disclaimer">
