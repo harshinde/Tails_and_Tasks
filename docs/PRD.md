@@ -81,8 +81,10 @@ Convert Instagram traffic into tagged email leads by offering free, path-relevan
 2. Enter first name + email  
 3. Submit **Send My Free Kit**  
 4. Form replaced by inline success copy  
-5. Welcome Home / Newcomer toolkit email sent via Resend  
+5. Resend sends **one** attachment: `public/toolkits/newcomer.pdf` (**Welcome Home Starter Kit**)  
 6. Contact stored with `source=homepage_hero`, `path_id=newcomer`
+
+**Welcome Home pack contents (locked):** Home Safety Checklist · Pet Care Schedule Templates · 50 Essential Pet Care Checklists · Pet Health Record Sheets · Pet Behavior Troubleshooting Guide. See [PDF_DESIGN.md](./PDF_DESIGN.md) §4.
 
 ### Journey B — Pathfinder quiz
 
@@ -201,8 +203,8 @@ Events are pushed to `window.dataLayer` and mirrored on `window.__pathfinderEven
 
 ## 11. Future roadmap (not in this MVP)
 
-1. Ship real PDF toolkit assets per path — see [TOOLKIT_CATALOG.md](./TOOLKIT_CATALOG.md) and [PDF_DESIGN.md](./PDF_DESIGN.md) (start with ungated Home Safety Checklist)
-2. Ungated `/resources` webpage for tasting-menu PDFs (immediate value → Pathfinder upsell)
+1. Ship **`newcomer.pdf`** Welcome Home Starter Kit (5 compiled sections) — see [PDF_DESIGN.md](./PDF_DESIGN.md) §4 and [TOOLKIT_CATALOG.md](./TOOLKIT_CATALOG.md)
+2. Ungated `/resources` webpage for tasting-menu PDFs (immediate value → full kit upsell)
 3. Stronger Instagram handle + Story template branding  
 4. A/B-ready analytics / experiment hooks  
 5. Lottie/Rive mascot pipeline  
@@ -213,6 +215,6 @@ Events are pushed to `window.dataLayer` and mirrored on `window.__pathfinderEven
 ## 12. Open decisions / known gaps
 
 - Instagram URL currently points at `@pawsandtasks` placeholder destination until handle is finalized  
-- PDF files are optional until content is ready  
+- PDF files are optional until content is ready; hero expects eventual `public/toolkits/newcomer.pdf` as the single Welcome Home attachment  
 - Duplicate email submits are treated as soft-success (contact may already exist; email still attempted)  
 - Worker project name remains `tails-and-tasks` while product brand is Paws & Tasks

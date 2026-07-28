@@ -23,13 +23,29 @@ Checklist of digital product ideas mapped to the four live Pathfinder archetypes
 Current attachment hook expects files at:
 
 ```text
-public/toolkits/newcomer.pdf
+public/toolkits/newcomer.pdf   ← hero “Welcome Home” email asset (MVP)
 public/toolkits/guide.pdf
 public/toolkits/guardian.pdf
 public/toolkits/best-friend.pdf
 ```
 
-MVP may ship **one bundled PDF per path** first, then split into individual assets / interactive modules over time.
+### Decision: one hero email asset
+
+Hero fast-track (`source=homepage_hero`) always sends **a single file**: `public/toolkits/newcomer.pdf`, branded as the **Welcome Home Starter Kit**.
+
+That PDF is a **compiled pack of 5 sections** (not five separate attachments in MVP):
+
+| # | Section (from catalog) | Role in the kit |
+| --- | --- | --- |
+| 1 | Home Safety Checklist for Pet Owners | Safety / anxiety relief |
+| 2 | Pet Care Schedule Templates | Daily structure (brand fit) |
+| 3 | 50 Essential Pet Care Checklists | Broad “what to do” coverage |
+| 4 | Pet Health Record Sheets | Universal health utility |
+| 5 | Pet Behavior Troubleshooting Guide | High-intent behavior help |
+
+Design this pack with the **Newcomer palette** ([PDF_DESIGN.md](./PDF_DESIGN.md)). Later we may split sections into standalone files; MVP keeps **one attachment**.
+
+MVP may also ship other path bundles as single `/{pathId}.pdf` files, then split into individual assets / interactive modules over time.
 
 ---
 
@@ -37,22 +53,23 @@ MVP may ship **one bundled PDF per path** first, then split into individual asse
 
 *Focus: Foundational setup, basic care, home preparation, and early safety for new pet owners.*  
 *Path ID:* `newcomer`  
-*Suggested bundle file:* `public/toolkits/newcomer.pdf`
+*Suggested bundle file:* `public/toolkits/newcomer.pdf`  
+*Hero email asset:* **Yes — Welcome Home Starter Kit** (compiled 5 sections below; see Decision above)
 
 | Status | Product idea | Description | Delivery |
 | --- | --- | --- | --- |
 | [ ] | Pet Adoption Workbook | Checklists and guides to help prospective owners prepare their homes and choose the right pet. | Both |
 | [ ] | Pet Adoption Contract Templates | Legally sound templates covering important aspects of adoption for rescues and shelters. | PDF |
 | [ ] | Pet Breed Comparison Guide | Detailed comparisons of characteristics, care needs, and lifestyle suitability across breeds. | PDF |
-| [ ] | Home Safety Checklist for Pet Owners | Detailed lists of potential hazards and preventive measures to keep pets safe indoors. **★ Ungated tasting menu #1 (build first)** | PDF |
-| [ ] | 50 Essential Pet Care Checklists | Checklists covering feeding, grooming, and health check-ups to keep owners organized. | Both |
+| [ ] | Home Safety Checklist for Pet Owners | Detailed lists of potential hazards and preventive measures to keep pets safe indoors. **★ Ungated tasting menu #1 (build first)** · **◆ Welcome Home kit §1** | PDF |
+| [ ] | 50 Essential Pet Care Checklists | Checklists covering feeding, grooming, and health check-ups to keep owners organized. **◆ Welcome Home kit §3** | Both |
 | [ ] | Pet-Safe Cleaning Guide | Methods and product recommendations for cleaning homes without harmful chemicals. | PDF |
 | [ ] | Pet-Friendly Home Organization Tips | Storage solutions for pet supplies, feeding areas, and maintaining a tidy home. | PDF |
 | [ ] | Pet-Friendly Apartment Living Guide | Strategies for managing space constraints and creating a pet-friendly environment in small homes. | PDF |
 | [ ] | Guide to Pet-Friendly Home Renovations | Planning tips for creating pet-safe spaces and choosing durable materials during remodels. | PDF |
 | [ ] | Guide to Pet-Friendly Home Office Setups | Tips for creating a comfortable workspace that accommodates both pet and owner. | PDF |
 | [ ] | Pet-Friendly Home Decor Ideas | Tips for selecting pet-safe furniture, materials, and stylish design elements. | PDF |
-| [ ] | Pet Care Schedule Templates | Customizable daily, weekly, and monthly routine templates for various pets. **★ Ungated tasting menu #2** | Both |
+| [ ] | Pet Care Schedule Templates | Customizable daily, weekly, and monthly routine templates for various pets. **★ Ungated tasting menu #2** · **◆ Welcome Home kit §2** | Both |
 | [ ] | Pet Caregiver Instruction Sheets | Detailed care instructions, emergency contacts, and daily routines for professional pet sitters. | Both |
 | [ ] | Pet-Sitting Guide for Friends & Family | Handover guide including feeding schedules and emergency contacts for informal sitters. | PDF |
 | [ ] | Pet Boarding Checklists | Packing lists and vital questions to ask boarding facilities to ensure a safe stay. | PDF |
@@ -76,7 +93,7 @@ MVP may ship **one bundled PDF per path** first, then split into individual asse
 | --- | --- | --- | --- |
 | [ ] | Pet Training Progress Tracker | Goal-setting templates, progress charts, and reward systems to motivate successful training. | Both |
 | [ ] | Pet Training Guide | Comprehensive strategies covering basic obedience, advanced tricks, and behavior modification. | PDF |
-| [ ] | Pet Behavior Troubleshooting Guide | Practical solutions and training tips for common problems like barking or scratching. **★ Ungated tasting menu #5 (closer)** | PDF |
+| [ ] | Pet Behavior Troubleshooting Guide | Practical solutions and training tips for common problems like barking or scratching. **★ Ungated tasting menu #5 (closer)** · **◆ Welcome Home kit §5** | PDF |
 | [ ] | Pet Behavior Modification Worksheets | Tracking sheets and progress logs to help owners address specific behavior issues. | Both |
 | [ ] | Pet Socialization Guide | Tips for safely introducing pets to new environments, animals, and people. | PDF |
 | [ ] | Guide to Training Service Animals | Training techniques and certification requirements for selecting and raising service animals. | PDF |
@@ -95,7 +112,7 @@ MVP may ship **one bundled PDF per path** first, then split into individual asse
 | Status | Product idea | Description | Delivery |
 | --- | --- | --- | --- |
 | [ ] | Pet Wellness Journal | Comprehensive journal to monitor a pet's health, diet, exercise, and behavior over time. | Both |
-| [ ] | Pet Health Record Sheets | Track medical history, vaccinations, vet visits, and medications in one centralized place. **★ Ungated tasting menu #3** | Both |
+| [ ] | Pet Health Record Sheets | Track medical history, vaccinations, vet visits, and medications in one centralized place. **★ Ungated tasting menu #3** · **◆ Welcome Home kit §4** | Both |
 | [ ] | Pet Nutrition Planner | Meal planning templates, dietary guidelines, and tracking sheets for balanced pet diets. | Both |
 | [ ] | Pet Medication Tracker | A log for pet owners to track medications, dosages, and administration schedules accurately. | Both |
 | [ ] | Pet First Aid Manual | Detailed manual covering common emergencies, first aid checklists, and illness recognition tips. | PDF |
@@ -165,11 +182,11 @@ MVP may ship **one bundled PDF per path** first, then split into individual asse
 
 ## Suggested build sequence
 
-0. **Ungated tasting menu (5 PDFs)** — see [PDF_DESIGN.md](./PDF_DESIGN.md); start with **Home Safety Checklist**  
-1. **MVP bundle PDFs (4 files)** — curate a “greatest hits” subset per path into one attachable toolkit each  
-2. **Hero Welcome Home subset** — prioritize Newcomer items that match the fast-track promise  
+0. **Welcome Home email asset** — author/design **`public/toolkits/newcomer.pdf`** as one compiled pack of the 5 ◆ sections (hero Send My Free Kit)  
+1. **Ungated tasting menu** — see [PDF_DESIGN.md](./PDF_DESIGN.md); can extract/preview sections from the Welcome Home pack (start public tease with **Home Safety Checklist**)  
+2. **Other path MVP bundles** — `guide.pdf` / `guardian.pdf` / `best-friend.pdf` as single email assets each  
 3. **Guide interactive pilot** — evolve Training Progress Tracker / Behavior Worksheets into the daily practice web experience  
-4. **Per-asset library** — host individual PDFs (or interactive modules) beyond the four bundle files  
+4. **Per-asset library** — split compiled packs into standalone PDFs / interactive modules  
 5. **Hosting options to evaluate**
    - Ungated previews/downloads on `/resources` (`public/resources/...`)  
    - Gated bundles on Workers (`/toolkits/...`) + Resend attachment/link  

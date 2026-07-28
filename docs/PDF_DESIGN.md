@@ -15,6 +15,7 @@ PDFs are archetype-based digital products: clean, modern, utility-focused. Each 
 1. Ship printable, high-utility PDFs that match web brand quality  
 2. Host an ungated resources webpage so visitors see value before email opt-in  
 3. Use 5 “tasting menu” PDFs to tease each path and convert into full Pathfinder bundles  
+4. Deliver hero fast-track as **one** email asset: `public/toolkits/newcomer.pdf` (Welcome Home Starter Kit)
 
 ---
 
@@ -87,7 +88,41 @@ Use these as CSS variables when designing HTML→PDF templates (and as hex swatc
 
 ---
 
-## 4. Product-led growth: ungated tasting menu
+## 4. Hero email asset — Welcome Home Starter Kit (`newcomer.pdf`)
+
+### Decision (locked for MVP)
+
+| Item | Decision |
+| --- | --- |
+| Trigger | Hero form **Send My Free Kit** (`source=homepage_hero`) |
+| Resend `path_id` | `newcomer` |
+| Files attached | **Exactly one:** `public/toolkits/newcomer.pdf` |
+| Product name in email/UI | Welcome Home Starter Kit |
+| Palette | Newcomer tokens (`--color-newcomer-*`) |
+
+Do **not** attach five separate PDFs in the hero email for MVP. Compile the five sections into a single multipage PDF.
+
+### Official section checklist (compiled into `newcomer.pdf`)
+
+| § | Catalog item | Purpose |
+| --- | --- | --- |
+| 1 | Home Safety Checklist for Pet Owners | Safety / reduce new-pet anxiety |
+| 2 | Pet Care Schedule Templates | Daily/weekly structure (brand fit) |
+| 3 | 50 Essential Pet Care Checklists | Broad foundational coverage |
+| 4 | Pet Health Record Sheets | Universal medical/vaccine ledger |
+| 5 | Pet Behavior Troubleshooting Guide | High-intent behavior help |
+
+Arc for the pack: **safety → routine → organization → health → behavior**.
+
+### Relationship to ungated tasting menu
+
+- Ungated `/resources` can still publish **standalone teaser PDFs** (e.g. Home Safety alone).  
+- Hero email remains the **compiled Welcome Home pack**.  
+- Overlap is intentional: sample one section free → email unlocks the full starter kit.
+
+---
+
+## 5. Product-led growth: ungated tasting menu
 
 ### Logic
 
@@ -132,20 +167,15 @@ Examples for resources hooks:
 
 ### Suggested first build
 
-**Ship first: Home Safety Checklist for Pet Owners (Newcomer).**
+**Ship first: compiled `newcomer.pdf` (Welcome Home Starter Kit)** containing the 5 ◆ sections — this unblocks hero email delivery.
 
-Reasons:
+In parallel or next, extract **Home Safety Checklist** as the first ungated `/resources` tease.
 
-1. Matches hero “Welcome Home” promise and Newcomer anxiety  
-2. Checklist format is fastest to design/print and easiest to preview on a webpage  
-3. Uses the calm Newcomer palette well (low cognitive load)  
-4. Creates a natural upsell into the full Welcome Kit / Pathfinder  
-
-Then: Health Record Sheets → DIY Toy Templates → Care Schedule → Behavior Troubleshooting (closer).
+Then tasting-menu standalones: Health Record Sheets → DIY Toy Templates → Care Schedule → Behavior Troubleshooting (closer).
 
 ---
 
-## 5. Hosting & display (target architecture)
+## 6. Hosting & display (target architecture)
 
 ```text
 /resources (or /free-tools)
@@ -158,11 +188,19 @@ Then: Health Record Sheets → DIY Toy Templates → Care Schedule → Behavior 
 | Asset type | Suggested path | Gate |
 | --- | --- | --- |
 | Tasting menu PDFs | `public/resources/{slug}.pdf` | Ungated |
-| Full path bundles | `public/toolkits/{pathId}.pdf` | Email via Pathfinder / hero |
+| Welcome Home + path bundles | `public/toolkits/{pathId}.pdf` | Email via hero / quiz (`newcomer.pdf` = hero asset) |
 
 ---
 
-## 6. Build checklist (tasting menu)
+## 7. Build checklists
+
+### 7.1 Welcome Home email asset (hero)
+
+| Status | File | Contents |
+| --- | --- | --- |
+| [ ] | `public/toolkits/newcomer.pdf` | §§1–5 compiled Welcome Home Starter Kit |
+
+### 7.2 Ungated tasting menu
 
 | Status | Slug | Title | Palette |
 | --- | --- | --- | --- |
