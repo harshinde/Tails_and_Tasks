@@ -115,13 +115,14 @@ Hero fast-track always maps to the **newcomer / Welcome Home** kit.
 Add PDFs as:
 
 ```text
-public/toolkits/newcomer.pdf
+public/toolkits/newcomer.pdf   # shipped — Welcome Home
 public/toolkits/guide.pdf
-public/toolkits/guardian.pdf
+public/toolkits/guardian.pdf   # shipped — Health & Nutrition Vault
 public/toolkits/best-friend.pdf
 ```
 
-Until those files exist, the confirmation email still sends (without attachment).
+Regenerate Guardian kit: `python3 scripts/generate_guardian_pdf.py`  
+Until a path file exists, the confirmation email still sends (without attachment).
 ## Analytics events
 
 Custom events are pushed to `window.dataLayer` and mirrored on `window.__pathfinderEvents`:
