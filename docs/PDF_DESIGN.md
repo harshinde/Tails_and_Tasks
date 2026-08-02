@@ -202,6 +202,15 @@ Then tasting-menu standalones: Health Record Sheets → DIY Toy Templates → Ca
 
 Source HTML + generator: `content/toolkits/newcomer_welcome_kit.html`, `scripts/generate_newcomer_pdf.py`
 
+### 7.1c Guardian path bundle (`guardian.pdf`)
+
+| Status | File | Contents |
+| --- | --- | --- |
+| [x] | `public/toolkits/guardian.pdf` | Longevity mindset, medical ledger, BCS/nutrition, preventative routines |
+
+Source HTML + generator: `content/toolkits/guardian_health_vault.html`, `scripts/generate_guardian_pdf.py`  
+Palette: Guardian tokens (`--color-guardian-*`). Delivery: Pathfinder quiz `path_id=guardian`.
+
 ### 7.2 Ungated tasting menu
 
 | Status | Slug | Title | Palette |
