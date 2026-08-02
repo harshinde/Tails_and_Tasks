@@ -91,10 +91,10 @@ MVP may also ship other path bundles as single `/{pathId}.pdf` files, then split
 
 | Status | Product idea | Description | Delivery |
 | --- | --- | --- | --- |
-| [ ] | Pet Training Progress Tracker | Goal-setting templates, progress charts, and reward systems to motivate successful training. | Both |
-| [ ] | Pet Training Guide | Comprehensive strategies covering basic obedience, advanced tricks, and behavior modification. | PDF |
-| [x] | Pet Behavior Troubleshooting Guide | Practical solutions and training tips for common problems like barking or scratching. **★ Ungated tasting menu #5 (closer)** · **◆ Welcome Home kit §5** | PDF |
-| [ ] | Pet Behavior Modification Worksheets | Tracking sheets and progress logs to help owners address specific behavior issues. | Both |
+| [x] | Pet Training Progress Tracker | Goal-setting templates, progress charts, and reward systems to motivate successful training. **◆ Guide kit §2 (21-day tracker)** | Both |
+| [x] | Pet Training Guide | Comprehensive strategies covering basic obedience, advanced tricks, and behavior modification. **◆ Guide kit §1 (5-Minute Philosophy)** | PDF |
+| [x] | Pet Behavior Troubleshooting Guide | Practical solutions and training tips for common problems like barking or scratching. **★ Ungated tasting menu #5 (closer)** · **◆ Welcome Home kit §5** · **◆ Guide kit §3 (Big Three)** | PDF |
+| [x] | Pet Behavior Modification Worksheets | Tracking sheets and progress logs to help owners address specific behavior issues. **◆ Guide kit §2** | Both |
 | [ ] | Pet Socialization Guide | Tips for safely introducing pets to new environments, animals, and people. | PDF |
 | [ ] | Guide to Training Service Animals | Training techniques and certification requirements for selecting and raising service animals. | PDF |
 | [ ] | Guide to Training Therapy Animals | Step-by-step techniques and certification processes for raising therapy animals. | PDF |

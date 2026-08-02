@@ -202,6 +202,15 @@ Then tasting-menu standalones: Health Record Sheets → DIY Toy Templates → Ca
 
 Source HTML + generator: `content/toolkits/newcomer_welcome_kit.html`, `scripts/generate_newcomer_pdf.py`
 
+### 7.1b Guide path bundle (`guide.pdf`)
+
+| Status | File | Contents |
+| --- | --- | --- |
+| [x] | `public/toolkits/guide.pdf` | 5-Minute Philosophy, 21-day tracker, Big Three interventions |
+
+Source HTML + generator: `content/toolkits/guide_habit_mastery.html`, `scripts/generate_guide_pdf.py`  
+Palette: Guide tokens (`--color-guide-*`). Delivery: Pathfinder quiz `path_id=guide`.
+
 ### 7.2 Ungated tasting menu
 
 | Status | Slug | Title | Palette |
