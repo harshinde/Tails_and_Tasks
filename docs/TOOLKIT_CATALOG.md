@@ -143,12 +143,12 @@ MVP may also ship other path bundles as single `/{pathId}.pdf` files, then split
 
 | Status | Product idea | Description | Delivery |
 | --- | --- | --- | --- |
-| [ ] | DIY Pet Toy Templates | Easy-to-follow instructions and material lists for creating safe, engaging pet toys. **★ Ungated tasting menu #4** | PDF |
-| [ ] | Pet Enrichment Activity Book | DIY projects, interactive games, and sensory activities to keep pets mentally stimulated. | Both |
-| [ ] | Pet-Friendly Recipe Book | Step-by-step instructions and nutritional info for homemade, pet-safe treats and meals. | PDF |
-| [ ] | Pet-Friendly Recipe Box | Curated collection of pet-friendly recipes for everyday meals and special occasions. | PDF |
-| [ ] | The Ultimate Guide to Pet-Friendly Travel | Comprehensive advice for road trips, flights, accommodations, and packing for pets. | PDF |
-| [ ] | Pet-Friendly Road Trip Planner | Route planning tips, pet-friendly stops, packing lists, and travel safety advice. | Both |
+| [x] | DIY Pet Toy Templates | Easy-to-follow instructions and material lists for creating safe, engaging pet toys. **★ Ungated tasting menu #4** · **◆ Best Friend kit §2** | PDF |
+| [x] | Pet Enrichment Activity Book | DIY projects, interactive games, and sensory activities to keep pets mentally stimulated. **◆ Best Friend kit §1–2** | Both |
+| [x] | Pet-Friendly Recipe Book | Step-by-step instructions and nutritional info for homemade, pet-safe treats and meals. **◆ Best Friend kit §3** | PDF |
+| [x] | Pet-Friendly Recipe Box | Curated collection of pet-friendly recipes for everyday meals and special occasions. **◆ Best Friend kit §3** | PDF |
+| [x] | The Ultimate Guide to Pet-Friendly Travel | Comprehensive advice for road trips, flights, accommodations, and packing for pets. **◆ Best Friend kit §4 (starter packing)** | PDF |
+| [x] | Pet-Friendly Road Trip Planner | Route planning tips, pet-friendly stops, packing lists, and travel safety advice. **◆ Best Friend kit §4** | Both |
 | [ ] | Pet Travel Journal | Document adventures with travel logs, photo pages, and memory-keeping templates. | Both |
 | [ ] | Pet Costume Ideas and Patterns | Instructions and patterns for creating fun, safe pet costumes at home. | PDF |
 | [ ] | Pet Play Area Design Guide | Ideas and safety tips for creating dedicated indoor and outdoor pet play zones. | PDF |

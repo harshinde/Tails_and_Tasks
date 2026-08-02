@@ -220,6 +220,15 @@ Palette: Guide tokens (`--color-guide-*`). Delivery: Pathfinder quiz `path_id=gu
 Source HTML + generator: `content/toolkits/guardian_health_vault.html`, `scripts/generate_guardian_pdf.py`  
 Palette: Guardian tokens (`--color-guardian-*`). Delivery: Pathfinder quiz `path_id=guardian`.
 
+### 7.1d Best Friend path bundle (`best-friend.pdf`)
+
+| Status | File | Contents |
+| --- | --- | --- |
+| [x] | `public/toolkits/best-friend.pdf` | Enrichment philosophy, DIY projects, recipes, adventure checklists |
+
+Source HTML + generator: `content/toolkits/best_friend_lifestyle_play.html`, `scripts/generate_best_friend_pdf.py`  
+Palette: Best Friend tokens (`--color-bestfriend-*`). Delivery: Pathfinder quiz `path_id=best-friend`.
+
 ### 7.2 Ungated tasting menu
 
 | Status | Slug | Title | Palette |
