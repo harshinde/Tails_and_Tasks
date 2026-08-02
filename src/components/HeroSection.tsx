@@ -4,9 +4,10 @@ import { useState, type FormEvent } from "react";
 import {
   CompletedCheck,
   DownloadInstant,
+  EmailPaw,
+  FreeResourceGift,
   SoftPawHeart,
 } from "@/components/icons";
-import { HeroMascot } from "@/components/mascots/HeroMascot";
 
 interface HeroSectionProps {
   onScrollToPathfinder: () => void;
@@ -72,7 +73,11 @@ export function HeroSection({
           </p>
 
           {succeeded ? (
-            <div className="hero__success" role="status" aria-live="polite">
+            <div
+              className="hero__success signup-card"
+              role="status"
+              aria-live="polite"
+            >
               <div className="signup-success__icons" aria-hidden="true">
                 <CompletedCheck
                   className="signup-success__check"
@@ -108,50 +113,69 @@ export function HeroSection({
               </button>
             </div>
           ) : (
-            <form className="hero__form" onSubmit={handleSubmit} noValidate>
-              <div className="hero__fields">
-                <label className="field">
-                  <span className="visually-hidden">First Name</span>
-                  <input
-                    className="field__input"
-                    name="first_name"
-                    type="text"
-                    autoComplete="given-name"
-                    placeholder="First Name"
-                    required
-                    value={firstName}
-                    onChange={(event) => setFirstName(event.target.value)}
-                  />
-                </label>
-                <label className="field">
-                  <span className="visually-hidden">Email Address</span>
-                  <input
-                    className="field__input"
-                    name="email_address"
-                    type="email"
-                    autoComplete="email"
-                    inputMode="email"
-                    placeholder="Email Address"
-                    required
-                    value={email}
-                    onChange={(event) => setEmail(event.target.value)}
-                  />
-                </label>
-              </div>
-
-              {error ? <p className="hero__error">{error}</p> : null}
-
-              <button
-                type="submit"
-                className="btn btn--primary"
-                disabled={submitting}
+            <>
+              <form
+                className="hero__form signup-card"
+                onSubmit={handleSubmit}
+                noValidate
               >
-                {submitting ? "Sending…" : "Send My Free Kit"}
-              </button>
+                <div className="signup-card__icons" aria-hidden="true">
+                  <FreeResourceGift
+                    className="signup-card__icon-svg"
+                    size={22}
+                    title="Free kit"
+                  />
+                  <EmailPaw
+                    className="signup-card__icon-svg"
+                    size={22}
+                    title="Email delivery"
+                  />
+                </div>
 
-              <p className="hero__micro">
-                No spam. Useful, bite-sized help for real life with pets.
-              </p>
+                <div className="hero__fields">
+                  <label className="field">
+                    <span className="visually-hidden">First Name</span>
+                    <input
+                      className="field__input"
+                      name="first_name"
+                      type="text"
+                      autoComplete="given-name"
+                      placeholder="First Name"
+                      required
+                      value={firstName}
+                      onChange={(event) => setFirstName(event.target.value)}
+                    />
+                  </label>
+                  <label className="field">
+                    <span className="visually-hidden">Email Address</span>
+                    <input
+                      className="field__input"
+                      name="email_address"
+                      type="email"
+                      autoComplete="email"
+                      inputMode="email"
+                      placeholder="Email Address"
+                      required
+                      value={email}
+                      onChange={(event) => setEmail(event.target.value)}
+                    />
+                  </label>
+                </div>
+
+                {error ? <p className="hero__error">{error}</p> : null}
+
+                <button
+                  type="submit"
+                  className="btn btn--primary"
+                  disabled={submitting}
+                >
+                  {submitting ? "Sending…" : "Send My Free Kit"}
+                </button>
+
+                <p className="hero__micro">
+                  No spam. Useful, bite-sized help for real life with pets.
+                </p>
+              </form>
 
               <p className="hero__proof">
                 Prefer a custom toolkit?{" "}
@@ -163,12 +187,23 @@ export function HeroSection({
                   Take the Pathfinder below ↓
                 </button>
               </p>
-            </form>
+            </>
           )}
         </div>
 
-        <div className="hero__visual-panel" aria-hidden="true">
-          <HeroMascot />
+        <div className="hero__visual-panel">
+          <figure className="hero__photo-frame">
+            {/* Decorative companion image — alt left empty because headline carries meaning */}
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              className="hero__photo"
+              src="/images/hero-pet-parents.jpg"
+              alt=""
+              width={720}
+              height={900}
+              decoding="async"
+            />
+          </figure>
         </div>
       </div>
     </section>
