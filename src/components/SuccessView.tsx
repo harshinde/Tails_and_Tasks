@@ -1,8 +1,11 @@
 "use client";
 
 import { useRef } from "react";
-import { CompletedCheck } from "@/components/icons/CompletedCheck";
-import { SoftPawHeart } from "@/components/icons/SoftPawHeart";
+import {
+  CompletedCheck,
+  DownloadInstant,
+  SoftPawHeart,
+} from "@/components/icons";
 import { StoryMascot } from "@/components/mascots/StoryMascot";
 import { INSTAGRAM_URL } from "@/lib/bundles";
 import type { Bundle } from "@/lib/types";
@@ -71,8 +74,9 @@ export function SuccessView({ bundle, onDownload }: SuccessViewProps) {
       <div className="success__inner">
         <div className="success__copy">
           <div className="success__icons" aria-hidden="true">
-            <CompletedCheck className="success__check" />
-            <SoftPawHeart className="success__paw" />
+            <CompletedCheck className="success__check" size={48} variant="success" />
+            <SoftPawHeart className="success__paw" size={32} />
+            <DownloadInstant className="success__download" size={32} />
           </div>
           <p className="success__brand">Paws &amp; Tasks</p>
           <h2 id="success-heading" className="success__headline">

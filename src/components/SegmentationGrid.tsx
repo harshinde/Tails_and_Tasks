@@ -66,7 +66,11 @@ export function SegmentationGrid({
                 onClick={() => onSelect(bundle)}
               >
                 <div className="path-card__wash" aria-hidden="true" />
-                <PathIcon bundleId={bundle.id} active={isHovered || isSelected} />
+                <PathIcon
+                  bundleId={bundle.id}
+                  active={isHovered}
+                  selected={isSelected}
+                />
                 <h3 className="path-card__title">{bundle.title}</h3>
                 <p className="path-card__description">{bundle.description}</p>
                 <p className="path-card__supporting">{bundle.supporting}</p>

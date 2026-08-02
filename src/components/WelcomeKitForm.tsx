@@ -1,9 +1,13 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
-import { EmailPaw } from "@/components/icons/EmailPaw";
-import { CompletedCheck } from "@/components/icons/CompletedCheck";
-import { SoftPawHeart } from "@/components/icons/SoftPawHeart";
+import {
+  CompletedCheck,
+  DownloadInstant,
+  EmailPaw,
+  FreeResourceGift,
+  SoftPawHeart,
+} from "@/components/icons";
 
 interface WelcomeKitFormProps {
   onSubscribe: (data: {
@@ -64,16 +68,29 @@ export function WelcomeKitForm({
           {succeeded ? (
             <div className="signup-success" role="status" aria-live="polite">
               <div className="signup-success__icons" aria-hidden="true">
-                <CompletedCheck className="signup-success__check" />
-                <SoftPawHeart className="signup-success__paw" />
+                <CompletedCheck
+                  className="signup-success__check"
+                  size={40}
+                  variant="success"
+                />
+                <SoftPawHeart
+                  className="signup-success__paw"
+                  size={28}
+                  variant="default"
+                />
+                <DownloadInstant
+                  className="signup-success__download"
+                  size={28}
+                  variant="default"
+                />
               </div>
               <h2 id="signup-heading" className="signup-card__title">
                 You&apos;re all set!
               </h2>
               <p className="signup-card__body">
-                Check your inbox for your Welcome Home starter kit. It arrives
-                as easy-to-use PDF checklists you can start today — five minutes
-                at a time.
+                Check your inbox for your PDF kit. Your Welcome Home starter kit
+                arrives as easy-to-use checklists you can start today — five
+                minutes at a time.
               </p>
               <p className="signup-card__support">
                 We&apos;re glad you&apos;re here. You and your pet belong in
@@ -89,8 +106,17 @@ export function WelcomeKitForm({
             </div>
           ) : (
             <>
-              <div className="signup-card__icon" aria-hidden="true">
-                <EmailPaw className="signup-card__icon-svg" />
+              <div className="signup-card__icons" aria-hidden="true">
+                <FreeResourceGift
+                  className="signup-card__icon-svg"
+                  size={40}
+                  variant="default"
+                />
+                <EmailPaw
+                  className="signup-card__icon-svg"
+                  size={40}
+                  variant="default"
+                />
               </div>
               <h2 id="signup-heading" className="signup-card__title">
                 Get your free Welcome Home starter kit

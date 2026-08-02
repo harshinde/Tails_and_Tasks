@@ -121,26 +121,15 @@ Rules: Strong weight contrast, comfortable line lengths (45–75 characters), no
 
 ## Iconography
 
+Canonical source: **[ICONOGRAPHY.md](./ICONOGRAPHY.md)**
+
 **Style**: Soft rounded terminals, consistent ~1.5–2px stroke, 24×24 grid, organic-friendly shapes.
 
 **Signature**: Soft Paw + Heart (logo mark, favicon, decorative accent).
 
-**Core set for this site**:
-- Checklist Paw
-- Completed Check
-- Free Resource / Gift
-- Email Envelope + Paw
-- Download / Instant Access
-- Progress Tracker (for Pathfinder)
-- Category icons for the four Pathfinder cards (Newcomer, Guide, Guardian, Best Friend)
-- Community / Join
+**Homepage starter set**: Soft Paw + Heart · Free Resource / Gift · Email Envelope + Paw · Completed Check · Download / Instant Access · Checklist Paw · Progress Tracker · four Pathfinder category icons · Community / Join.
 
-**Color variants**:
-- Default: Teal or Muted Gray
-- Hover: Darker teal or soft teal fill
-- Active / Selected / CTA: Warm Orange
-- Success: Success Green or teal + check
-- Disabled: Muted at reduced opacity
+**Color variants**: Teal default · darker teal / soft fill hover · orange active/CTA · success green completion · muted disabled.
 
 ---
 
@@ -211,5 +200,6 @@ Layout notes: consistent spacing scale rhythm; large touch targets; never crowd;
 | CSS variables | `src/app/globals.css` `:root` |
 | Fonts | `src/app/layout.tsx` (next/font) |
 | Header / logo | `src/components/SiteHeader.tsx`, `src/components/icons/*` |
+| Icon system | `docs/ICONOGRAPHY.md` · `src/components/icons/*` |
 | Hero / form / cards / modal | `src/app/globals.css` + homepage components |
 | Path PDF palettes | Unchanged — see `PDF_DESIGN.md` |

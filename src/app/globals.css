@@ -226,10 +226,66 @@ a {
 
 .site-header__proof {
   margin: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
   font-size: 0.85rem;
   font-weight: 600;
   color: var(--color-primary);
   white-space: nowrap;
+}
+
+.site-header__community {
+  flex-shrink: 0;
+}
+
+/* Icon system variants — docs/ICONOGRAPHY.md */
+.icon {
+  display: block;
+  flex-shrink: 0;
+  color: var(--color-primary);
+  transition:
+    color 180ms var(--ease-out),
+    transform 180ms var(--ease-out),
+    opacity 180ms var(--ease-out);
+}
+
+.icon--default {
+  color: var(--color-primary);
+}
+
+.icon--muted {
+  color: var(--color-muted);
+}
+
+.icon--hover {
+  color: var(--color-primary-hover);
+}
+
+.icon--active,
+.icon--cta {
+  color: var(--color-accent);
+}
+
+.icon--success {
+  color: var(--color-primary);
+}
+
+.icon--disabled {
+  color: var(--color-muted);
+  opacity: 0.45;
+}
+
+.icon--draw-check .icon__check-path {
+  stroke-dasharray: 24;
+  stroke-dashoffset: 24;
+  animation: check-draw 520ms var(--ease-out) 80ms forwards;
+}
+
+@keyframes check-draw {
+  to {
+    stroke-dashoffset: 0;
+  }
 }
 
 /* Hero */
@@ -308,6 +364,17 @@ a {
 .hero__copy {
   max-width: 40rem;
   animation: fade-rise 900ms var(--ease-out) 120ms both;
+}
+
+.hero__kicker {
+  margin: 0 0 0.85rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  color: var(--color-primary);
+  font-size: 0.88rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
 }
 
 .hero__headline {
@@ -412,16 +479,15 @@ a {
   animation: fade-rise 700ms var(--ease-out) both;
 }
 
-.signup-card__icon {
-  width: 3rem;
-  height: 3rem;
-  margin-bottom: 0.85rem;
+.signup-card__icons {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  margin-bottom: 0.9rem;
   color: var(--color-primary);
 }
 
 .signup-card__icon-svg {
-  width: 100%;
-  height: 100%;
   display: block;
 }
 
@@ -490,15 +556,33 @@ a {
   gap: 0.5rem;
 }
 
-.signup-success__check {
-  width: 3rem;
-  height: 3rem;
+.signup-success__check,
+.signup-success__paw,
+.signup-success__download {
+  animation: success-bounce 480ms var(--ease-out) both;
 }
 
 .signup-success__paw {
-  width: 2rem;
-  height: 2rem;
-  color: var(--color-primary);
+  animation-delay: 60ms;
+}
+
+.signup-success__download {
+  animation-delay: 120ms;
+}
+
+@keyframes success-bounce {
+  0% {
+    opacity: 0;
+    transform: translateY(6px) scale(0.92);
+  }
+  70% {
+    opacity: 1;
+    transform: translateY(-2px) scale(1.04);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }
 
 /* Segmentation grid */
@@ -670,34 +754,15 @@ a {
 }
 
 .path-icon {
-  width: 72px;
-  height: 72px;
+  width: 48px;
+  height: 48px;
+  transition: transform 220ms var(--ease-out);
 }
 
-.path-icon__svg {
-  width: 100%;
-  height: 100%;
-  display: block;
-}
-
-.path-icon--newcomer.is-active .path-icon__spark,
-.path-icon--newcomer:hover .path-icon__spark {
-  animation: spark-pop 700ms var(--ease-out);
-}
-
-.path-icon--guide.is-active .path-icon__tick,
-.path-card.is-hovered .path-icon--guide .path-icon__tick {
-  animation: tick-bounce 650ms var(--ease-out);
-}
-
-.path-icon--guardian.is-active .path-icon__heart,
-.path-card.is-hovered .path-icon--guardian .path-icon__heart {
-  animation: heart-pulse 700ms var(--ease-out);
-}
-
-.path-icon--best-friend.is-active .path-icon__ball,
-.path-card.is-hovered .path-icon--best-friend .path-icon__ball {
-  animation: ball-bounce 700ms var(--ease-out);
+.path-card:hover .path-icon,
+.path-card.is-hovered .path-icon,
+.path-card.is-selected .path-icon {
+  transform: scale(1.06);
 }
 
 /* Modal */
@@ -738,19 +803,12 @@ a {
 
 .quiz-progress {
   display: flex;
-  gap: 0.4rem;
   margin: 0 0 1rem;
 }
 
-.quiz-progress span {
-  flex: 1;
-  height: 4px;
-  border-radius: 999px;
-  background: rgba(45, 62, 80, 0.1);
-}
-
-.quiz-progress span.is-active {
-  background: var(--color-accent);
+.quiz-progress__icon {
+  width: min(100%, 180px);
+  height: auto;
 }
 
 .quiz-eyebrow {
@@ -940,15 +998,18 @@ a {
   margin-bottom: 0.75rem;
 }
 
-.success__check {
-  width: 3.25rem;
-  height: 3.25rem;
+.success__check,
+.success__paw,
+.success__download {
+  animation: success-bounce 480ms var(--ease-out) both;
 }
 
 .success__paw {
-  width: 2.15rem;
-  height: 2.15rem;
-  color: var(--color-primary);
+  animation-delay: 60ms;
+}
+
+.success__download {
+  animation-delay: 120ms;
 }
 
 .success__brand {
@@ -1173,13 +1234,27 @@ a {
   .success,
   .modal__dialog,
   .modal__backdrop,
-  .quiz-step {
+  .quiz-step,
+  .icon--draw-check .icon__check-path,
+  .signup-success__check,
+  .signup-success__paw,
+  .signup-success__download,
+  .success__check,
+  .success__paw,
+  .success__download {
     animation: none !important;
+  }
+
+  .icon--draw-check .icon__check-path {
+    stroke-dashoffset: 0;
   }
 
   .btn:hover,
   .path-card:hover,
-  .path-card.is-hovered {
+  .path-card.is-hovered,
+  .path-card:hover .path-icon,
+  .path-card.is-hovered .path-icon,
+  .path-card.is-selected .path-icon {
     transform: none;
   }
 }

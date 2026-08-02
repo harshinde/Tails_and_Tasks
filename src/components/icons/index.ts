@@ -1,0 +1,13 @@
+export { SoftPawHeart } from "@/components/icons/SoftPawHeart";
+export { FreeResourceGift } from "@/components/icons/FreeResourceGift";
+export { EmailPaw } from "@/components/icons/EmailPaw";
+export { CompletedCheck } from "@/components/icons/CompletedCheck";
+export { DownloadInstant } from "@/components/icons/DownloadInstant";
+export { ChecklistPaw } from "@/components/icons/ChecklistPaw";
+export { ProgressTracker } from "@/components/icons/ProgressTracker";
+export { CommunityJoin } from "@/components/icons/CommunityJoin";
+export { NewcomerIcon } from "@/components/icons/pathfinder/NewcomerIcon";
+export { GuideIcon } from "@/components/icons/pathfinder/GuideIcon";
+export { GuardianIcon } from "@/components/icons/pathfinder/GuardianIcon";
+export { BestFriendIcon } from "@/components/icons/pathfinder/BestFriendIcon";
+export type { IconProps, IconVariant } from "@/components/icons/types";

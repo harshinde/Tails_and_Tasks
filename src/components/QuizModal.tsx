@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useId, useRef, useState, type FormEvent } from "react";
+import { ProgressTracker } from "@/components/icons";
 import { getQuizForPath } from "@/lib/quiz";
 import type { Bundle, QuizAnswers } from "@/lib/types";
 
@@ -147,9 +148,13 @@ export function QuizModal({
         </button>
 
         <div className="quiz-progress" aria-hidden="true">
-          <span className={currentStep >= 1 ? "is-active" : ""} />
-          <span className={currentStep >= 2 ? "is-active" : ""} />
-          <span className={currentStep >= 3 ? "is-active" : ""} />
+          <ProgressTracker
+            className="quiz-progress__icon"
+            size={22}
+            segments={3}
+            progress={currentStep / 3}
+            variant="default"
+          />
         </div>
 
         <p className="quiz-eyebrow">{bundle.title}</p>

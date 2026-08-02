@@ -1,5 +1,6 @@
 "use client";
 
+import { ChecklistPaw } from "@/components/icons";
 import { HeroMascot } from "@/components/mascots/HeroMascot";
 
 interface HeroSectionProps {
@@ -16,6 +17,10 @@ export function HeroSection({
       <div className="hero__atmosphere" aria-hidden="true" />
       <div className="hero__stage hero__stage--split">
         <div className="hero__copy">
+          <p className="hero__kicker">
+            <ChecklistPaw size={22} variant="default" title="Checklists" />
+            <span>Free pet-care checklists</span>
+          </p>
           <h1 id="hero-heading" className="hero__headline">
             Build better pet habits, five minutes at a time.
           </h1>

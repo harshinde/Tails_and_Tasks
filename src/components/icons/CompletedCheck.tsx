@@ -1,22 +1,38 @@
-interface CompletedCheckProps {
-  className?: string;
-}
+import { iconClassName, type IconProps } from "@/components/icons/types";
 
-/** Soft completed-check mark for success states */
-export function CompletedCheck({ className }: CompletedCheckProps) {
+/** Rounded square with soft curved check */
+export function CompletedCheck({
+  className,
+  size = 24,
+  title,
+  variant = "success",
+}: IconProps) {
   return (
     <svg
-      className={className}
-      viewBox="0 0 48 48"
-      role="img"
-      aria-hidden="true"
+      className={iconClassName(variant, `${className ?? ""} icon--draw-check`)}
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      role={title ? "img" : "presentation"}
+      aria-label={title}
+      aria-hidden={title ? undefined : true}
       fill="none"
     >
-      <circle cx="24" cy="24" r="18" fill="#E0F2F1" stroke="#008080" strokeWidth="2" />
+      <rect
+        x="3.25"
+        y="3.25"
+        width="17.5"
+        height="17.5"
+        rx="5"
+        fill="#E0F2F1"
+        stroke="currentColor"
+        strokeWidth="1.75"
+      />
       <path
-        d="M15.5 24.5 21 30l11.5-13"
+        className="icon__check-path"
+        d="M7.5 12.25 10.6 15.4c.2.2.5.2.7 0L16.75 8.8"
         stroke="#10B981"
-        strokeWidth="3"
+        strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
