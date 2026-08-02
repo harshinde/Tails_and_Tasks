@@ -137,7 +137,7 @@ Canonical specs: **[ICONOGRAPHY.md](./ICONOGRAPHY.md)**
 - Inline hero signup: Free Resource / Gift and/or Email Envelope + Paw (optional accents; do not push fields below the fold)
 - Pathfinder cards: Newcomer · Guide · Guardian · Best Friend category icons
 - Success / confirmation: Completed Check + Soft Paw + Heart (+ Download when relevant)
-- Header / brand: Soft Paw + Heart; Community / Join for “Join 10,000+”
+- Header / brand: Soft Paw + Heart wordmark (keep social proof out of the header until validated)
 - Apply hover and active color variants from this system
 
 **PDF / email kits**
@@ -177,7 +177,7 @@ Always prefer icons from `public/icons/`. Match colors and usage to this design 
 
 Mobile-first structure for the landing page. **Keep conversion friction low** — do not add extra click steps.
 
-1. **Header (sticky, minimal)** — Soft Paw + Heart logo + “Paws & Tasks” wordmark left; “Join 10,000+” social proof right; cream background; compact height.
+1. **Header (sticky, minimal)** — Soft Paw + Heart logo + “Paws & Tasks” wordmark; cream background; compact height. Do not show unverified signup counts.
 2. **Hero + inline signup** — Cream canvas; headline + subheads; white form card in the hero (Gift + Email icons, fields, orange “Send My Free Kit”, micro-copy); teal Pathfinder secondary link; optional pet illustration on desktop. Form submits in place (no separate scroll-to-form step).
 3. **Pathfinder** — Soft cream or primary-light section; h2 + short support line; 1 → 2 → 4 column card grid with category icons. **Card click opens the quiz modal immediately** (no select + Continue intermediate step). Quiz email step shows “Great choice…” micro-copy.
 4. **Success** — Soft success/teal treatment; Completed Check + Soft Paw + Heart + Download/Instant Access; clear inbox/PDF messaging; optional Instagram/community row.
