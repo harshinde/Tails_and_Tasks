@@ -183,8 +183,8 @@ export function QuizModal({
           ) : (
             <>
               <p className="modal__body">
-                Great choice. Your custom toolkit is almost ready — just enter
-                your email below.
+                Great choice. Enter your name and email and we&apos;ll send your
+                custom toolkit.
               </p>
 
               <form className="modal__form" onSubmit={handleSubmit} noValidate>
@@ -229,7 +229,7 @@ export function QuizModal({
                 </button>
 
                 <p className="modal__disclaimer">
-                  We respect your inbox. No spam, just good habits.
+                  No spam. Useful tips for real life with your pet.
                 </p>
               </form>
             </>
