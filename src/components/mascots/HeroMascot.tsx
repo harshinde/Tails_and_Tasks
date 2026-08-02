@@ -53,12 +53,24 @@ export function HeroMascot() {
           <ellipse cx="180" cy="178" rx="78" ry="72" fill="url(#furMain)" />
           <ellipse cx="180" cy="198" rx="42" ry="32" fill="#F7E6D4" />
 
-          {/* Eyes */}
+          {/* Eyes — pupils stay put; highlights twinkle */}
           <g className="hero-mascot__eyes">
             <ellipse cx="152" cy="168" rx="9" ry="11" fill="#2C2A28" />
             <ellipse cx="208" cy="168" rx="9" ry="11" fill="#2C2A28" />
-            <circle cx="155" cy="164" r="3" fill="#F9F6F0" />
-            <circle cx="211" cy="164" r="3" fill="#F9F6F0" />
+            <circle
+              className="hero-mascot__twinkle hero-mascot__twinkle--left"
+              cx="155"
+              cy="164"
+              r="3"
+              fill="#F9F6F0"
+            />
+            <circle
+              className="hero-mascot__twinkle hero-mascot__twinkle--right"
+              cx="211"
+              cy="164"
+              r="3"
+              fill="#F9F6F0"
+            />
           </g>
 
           {/* Nose + smile */}
