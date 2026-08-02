@@ -288,12 +288,13 @@ a {
   }
 }
 
-/* Hero */
+/* Hero — first viewport: copy + form fields above the fold */
 .hero {
   display: grid;
   place-items: stretch;
   position: relative;
   overflow: hidden;
+  min-height: calc(100dvh - 3.75rem);
 }
 
 .hero__atmosphere {
@@ -319,11 +320,11 @@ a {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 1.5rem;
+  gap: 1.25rem;
+  min-height: calc(100dvh - 3.75rem);
   width: min(1120px, 100%);
   margin: 0 auto;
-  padding: clamp(2rem, 6vw, 4rem) clamp(1.25rem, 3vw, 2.5rem)
-    clamp(1.5rem, 4vw, 2.5rem);
+  padding: clamp(1.25rem, 3vw, 2rem) clamp(1.25rem, 3vw, 2.5rem);
 }
 
 .hero__stage--split {
@@ -338,7 +339,7 @@ a {
 }
 
 .hero-mascot {
-  width: min(70vw, 320px);
+  width: min(58vw, 260px);
 }
 
 .hero-mascot__svg {
@@ -362,25 +363,14 @@ a {
 }
 
 .hero__copy {
-  max-width: 40rem;
+  max-width: 36rem;
   animation: fade-rise 900ms var(--ease-out) 120ms both;
 }
 
-.hero__kicker {
-  margin: 0 0 0.85rem;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.45rem;
-  color: var(--color-primary);
-  font-size: 0.88rem;
-  font-weight: 600;
-  letter-spacing: 0.01em;
-}
-
 .hero__headline {
-  margin: 0 0 0.9rem;
+  margin: 0 0 0.7rem;
   font-family: var(--font-display);
-  font-size: clamp(2rem, 5vw, 2.75rem);
+  font-size: clamp(1.85rem, 4.4vw, 2.5rem);
   font-weight: 800;
   line-height: 1.15;
   letter-spacing: -0.02em;
@@ -388,34 +378,67 @@ a {
 }
 
 .hero__subhead {
-  margin: 0 0 0.75rem;
+  margin: 0 0 1.1rem;
   max-width: 34rem;
-  font-size: clamp(1rem, 2.2vw, 1.125rem);
-  line-height: 1.65;
+  font-size: clamp(0.98rem, 2vw, 1.1rem);
+  line-height: 1.55;
   color: var(--color-ink-soft);
 }
 
-.hero__subhead--follow {
-  margin-bottom: 1.35rem;
-}
-
-.hero__signup-card {
-  margin-top: 0.35rem;
+.hero__form,
+.hero__success {
+  display: grid;
+  gap: 0.75rem;
   max-width: 28rem;
-  animation: fade-rise 700ms var(--ease-out) 160ms both;
 }
 
-.hero__form-support {
-  margin: 0 0 0.85rem;
-  font-size: 0.95rem;
-  line-height: 1.5;
-  color: var(--color-ink);
+.hero__fields {
+  display: grid;
+  gap: 0.55rem;
+}
+
+.hero__fields .field__input {
+  background: var(--color-surface);
+  box-shadow: var(--shadow-sm);
+}
+
+.hero__error {
+  margin: 0;
+  color: var(--color-error);
+  font-size: 0.9rem;
+}
+
+.hero__micro {
+  margin: 0;
+  font-size: 0.85rem;
+  line-height: 1.45;
+  color: var(--color-ink-soft);
 }
 
 .hero__proof {
-  margin: 1rem 0 0;
-  font-size: 0.95rem;
+  margin: 0;
+  font-size: 0.92rem;
   color: var(--color-ink-soft);
+}
+
+.hero__success-title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: var(--color-ink-strong);
+}
+
+.hero__success-body,
+.hero__success-support {
+  margin: 0;
+  line-height: 1.5;
+  color: var(--color-ink-soft);
+}
+
+.hero__success-support {
+  color: var(--color-ink);
+  font-weight: 500;
 }
 
 .hero__link {
@@ -449,9 +472,9 @@ a {
 @media (min-width: 900px) {
   .hero__stage--split {
     display: grid;
-    grid-template-columns: 1.05fr 0.95fr;
+    grid-template-columns: 1.1fr 0.9fr;
     align-items: center;
-    gap: 2rem;
+    gap: 1.75rem;
     padding-inline: clamp(2rem, 5vw, 3.5rem);
   }
 
@@ -460,7 +483,38 @@ a {
   }
 
   .hero-mascot {
-    width: min(100%, 420px);
+    width: min(100%, 380px);
+  }
+
+  .hero__fields {
+    grid-template-columns: 1fr 1.25fr;
+  }
+}
+
+/* On shorter viewports, keep the mascot from stealing fold space */
+@media (max-height: 820px) and (min-width: 900px) {
+  .hero-mascot {
+    width: min(100%, 300px);
+  }
+
+  .hero__stage {
+    padding-block: 1.25rem;
+  }
+}
+
+@media (max-width: 899px) {
+  .hero__visual-panel {
+    display: none;
+  }
+
+  .hero {
+    min-height: auto;
+  }
+
+  .hero__stage {
+    min-height: auto;
+    padding-top: 1.5rem;
+    padding-bottom: 2rem;
   }
 }
 
