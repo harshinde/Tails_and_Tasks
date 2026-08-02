@@ -8,11 +8,11 @@ interface StoryMascotProps {
 }
 
 const ACCENTS: Record<BundleId, { wash: string; fur: string; detail: string }> = {
-  newcomer: { wash: "#F4D9C8", fur: "#E8C4A8", detail: "#D48A72" },
-  guide: { wash: "#D7E2D5", fur: "#C9D6C8", detail: "#7B9482" },
-  guardian: { wash: "#DCE3EB", fur: "#CDD6E0", detail: "#8A9BB0" },
-  "best-friend": { wash: "#F0E2B8", fur: "#E8D7A8", detail: "#C4A35A" },
-};
+  newcomer: { wash: "#FFE4D6", fur: "#FFD4C2", detail: "#FF6B35" },
+  guide: { wash: "#D0EBE9", fur: "#B8DEDC", detail: "#008080" },
+  guardian: { wash: "#D8E4E8", fur: "#C5D5DB", detail: "#3D6B7A" },
+  "best-friend": { wash: "#F7E6C4", fur: "#F0D9B0", detail: "#E8A04A" },
+}
 
 export function StoryMascot({ bundleId, title }: StoryMascotProps) {
   const colors = ACCENTS[bundleId];
@@ -27,8 +27,8 @@ export function StoryMascot({ bundleId, title }: StoryMascotProps) {
       <defs>
         <radialGradient id={`storyWash-${bundleId}`} cx="50%" cy="42%" r="60%">
           <stop offset="0%" stopColor={colors.wash} stopOpacity="0.95" />
-          <stop offset="70%" stopColor="#F9F6F0" stopOpacity="0.35" />
-          <stop offset="100%" stopColor="#F9F6F0" stopOpacity="0" />
+          <stop offset="70%" stopColor="#FAF0E6" stopOpacity="0.35" />
+          <stop offset="100%" stopColor="#FAF0E6" stopOpacity="0" />
         </radialGradient>
         <pattern
           id={`grain-${bundleId}`}
@@ -36,11 +36,11 @@ export function StoryMascot({ bundleId, title }: StoryMascotProps) {
           height="4"
           patternUnits="userSpaceOnUse"
         >
-          <circle cx="1" cy="1" r="0.6" fill="#2C2A28" opacity="0.05" />
+          <circle cx="1" cy="1" r="0.6" fill="#2D3E50" opacity="0.05" />
         </pattern>
       </defs>
 
-      <rect width="360" height="640" fill="#F9F6F0" />
+      <rect width="360" height="640" fill="#FAF0E6" />
       <rect width="360" height="640" fill={`url(#grain-${bundleId})`} />
       <ellipse cx="180" cy="280" rx="160" ry="180" fill={`url(#storyWash-${bundleId})`} />
 

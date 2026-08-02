@@ -33,7 +33,7 @@ export function SuccessView({ bundle, onDownload }: SuccessViewProps) {
       const ctx = canvas.getContext("2d");
       if (!ctx) return;
 
-      ctx.fillStyle = "#F9F6F0";
+      ctx.fillStyle = "#FAF0E6";
       ctx.fillRect(0, 0, canvas.width, canvas.height);
       ctx.drawImage(image, 0, 0, canvas.width, canvas.height);
 

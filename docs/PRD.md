@@ -180,12 +180,15 @@ Events are pushed to `window.dataLayer` and mirrored on `window.__pathfinderEven
 
 ## 9. Brand & UX constraints
 
-- Visual language: modern printmaking + soft watercolor (`#F9F6F0`, `#D48A72`, `#7B9482`, `#2C2A28`)
-- Typography: Playfair Display (headings) + DM Sans (UI)
+Canonical source: **[DESIGN.md](./DESIGN.md)** (PetBond Community).
+
+- Visual language: warm cream canvas (`#FAF0E6`), teal trust (`#008080`), orange energy (`#FF6B35`), white surfaces
+- Typography: Plus Jakarta Sans (headings) + Inter (body / UI)
 - Brand name must remain a hero-level signal
 - Cards only where they are the interaction container (path grid / quiz options)
 - Motion: intentional, lightweight (mascot idle, hover micro-animations, quiz cross-fade)
 - Motions must degrade under `prefers-reduced-motion`
+- Path PDF toolkits keep separate archetype palettes — see [PDF_DESIGN.md](./PDF_DESIGN.md)
 
 ---
 

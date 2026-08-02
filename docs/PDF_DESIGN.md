@@ -24,7 +24,7 @@ PDFs are archetype-based digital products: clean, modern, utility-focused. Each 
 | Element | Spec |
 | --- | --- |
 | Headers & main titles | **Georgia**, italicized for primary titles (editorial feel) |
-| Body & checklist items | Clean sans-serif — prefer **DM Sans** (match web UI); Helvetica/Inter acceptable in export tools |
+| Body & checklist items | Clean sans-serif — prefer **Inter** (match web UI); Helvetica acceptable in export tools |
 | Checkboxes | Empty square borders, **2px solid**, colored with the path **secondary accent** (print-friendly) |
 | Visual elements | **Paws & Tasks cartoon mascots only** |
 | Do not use | Geometric line-art patterns / decorative grids that fight the sleek, app-like interface |
