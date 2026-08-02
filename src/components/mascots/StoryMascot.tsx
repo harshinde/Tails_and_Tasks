@@ -48,7 +48,7 @@ export function StoryMascot({ bundleId, title }: StoryMascotProps) {
         x="180"
         y="78"
         textAnchor="middle"
-        fill="#2C2A28"
+        fill="#2D3E50"
         fontFamily="Georgia, 'Times New Roman', serif"
         fontSize="22"
         letterSpacing="3"
@@ -59,7 +59,7 @@ export function StoryMascot({ bundleId, title }: StoryMascotProps) {
         x="180"
         y="120"
         textAnchor="middle"
-        fill="#2C2A28"
+        fill="#2D3E50"
         fontFamily="Georgia, 'Times New Roman', serif"
         fontSize="34"
         fontWeight="700"
@@ -70,7 +70,7 @@ export function StoryMascot({ bundleId, title }: StoryMascotProps) {
         x="180"
         y="152"
         textAnchor="middle"
-        fill="#2C2A28"
+        fill="#2D3E50"
         opacity="0.72"
         fontFamily="Arial, sans-serif"
         fontSize="14"
@@ -99,13 +99,13 @@ export function StoryMascot({ bundleId, title }: StoryMascotProps) {
         />
         <ellipse cx="110" cy="120" rx="70" ry="64" fill={colors.fur} />
         <ellipse cx="110" cy="138" rx="38" ry="28" fill="#F7EDE2" />
-        <ellipse cx="84" cy="112" rx="8" ry="10" fill="#2C2A28" />
-        <ellipse cx="136" cy="112" rx="8" ry="10" fill="#2C2A28" />
-        <ellipse cx="110" cy="134" rx="11" ry="8" fill="#2C2A28" />
+        <ellipse cx="84" cy="112" rx="8" ry="10" fill="#2D3E50" />
+        <ellipse cx="136" cy="112" rx="8" ry="10" fill="#2D3E50" />
+        <ellipse cx="110" cy="134" rx="11" ry="8" fill="#2D3E50" />
         <path
           d="M94 148c8 12 24 12 32 0"
           fill="none"
-          stroke="#2C2A28"
+          stroke="#2D3E50"
           strokeWidth="4"
           strokeLinecap="round"
         />
@@ -116,7 +116,7 @@ export function StoryMascot({ bundleId, title }: StoryMascotProps) {
         x="180"
         y="540"
         textAnchor="middle"
-        fill="#2C2A28"
+        fill="#2D3E50"
         fontFamily="Arial, sans-serif"
         fontSize="16"
       >
