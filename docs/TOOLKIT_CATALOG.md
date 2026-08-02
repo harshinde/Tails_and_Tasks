@@ -111,10 +111,10 @@ MVP may also ship other path bundles as single `/{pathId}.pdf` files, then split
 
 | Status | Product idea | Description | Delivery |
 | --- | --- | --- | --- |
-| [ ] | Pet Wellness Journal | Comprehensive journal to monitor a pet's health, diet, exercise, and behavior over time. | Both |
-| [x] | Pet Health Record Sheets | Track medical history, vaccinations, vet visits, and medications in one centralized place. **★ Ungated tasting menu #3** · **◆ Welcome Home kit §4** | Both |
-| [ ] | Pet Nutrition Planner | Meal planning templates, dietary guidelines, and tracking sheets for balanced pet diets. | Both |
-| [ ] | Pet Medication Tracker | A log for pet owners to track medications, dosages, and administration schedules accurately. | Both |
+| [x] | Pet Wellness Journal | Comprehensive journal to monitor a pet's health, diet, exercise, and behavior over time. **◆ Guardian kit §1–4** | Both |
+| [x] | Pet Health Record Sheets | Track medical history, vaccinations, vet visits, and medications in one centralized place. **★ Ungated tasting menu #3** · **◆ Welcome Home kit §4** · **◆ Guardian kit §2** | Both |
+| [x] | Pet Nutrition Planner | Meal planning templates, dietary guidelines, and tracking sheets for balanced pet diets. **◆ Guardian kit §3** | Both |
+| [x] | Pet Medication Tracker | A log for pet owners to track medications, dosages, and administration schedules accurately. **◆ Guardian kit §2** | Both |
 | [ ] | Pet First Aid Manual | Detailed manual covering common emergencies, first aid checklists, and illness recognition tips. | PDF |
 | [ ] | Pet Emergency Preparedness Plan | Evacuation checklists, emergency contacts, and first aid guidance for disaster scenarios. | PDF |
 | [ ] | Pet Breed Health Guides | Breed-specific guides detailing common health issues, preventive care, and tailored care tips. | PDF |

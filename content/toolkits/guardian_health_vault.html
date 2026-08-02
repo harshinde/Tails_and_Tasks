@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<style>
+    @page {
+        size: A4;
+        margin: 18mm 20mm 22mm 20mm;
+        background-color: #F4F1EA;
+        @bottom-left {
+            content: "Paws & Tasks · The Guardian";
+            font-family: 'Helvetica', sans-serif;
+            font-size: 8pt;
+            color: #3B5B43;
+        }
+        @bottom-right {
+            content: "Page " counter(page) " of " counter(pages);
+            font-family: 'Helvetica', sans-serif;
+            font-size: 9pt;
+            color: #3B5B43;
+        }
+    }
+    body {
+        font-family: 'Helvetica', 'Arial', sans-serif;
+        color: #2F3630;
+        background-color: #F4F1EA;
+        margin: 0;
+        padding: 0;
+        line-height: 1.55;
+        box-sizing: border-box;
+        font-size: 11pt;
+    }
+    h1, h2, h3 {
+        font-family: 'Georgia', serif;
+        font-weight: normal;
+    }
+    h1 {
+        font-size: 28pt;
+        color: #3B5B43;
+        margin: 8px 0 6px;
+        font-style: italic;
+    }
+    .subtitle {
+        font-size: 13pt;
+        color: #2F3630;
+        margin-bottom: 22px;
+    }
+    h2 {
+        font-size: 17pt;
+        color: #3B5B43;
+        border-bottom: 2px solid #D99C5B;
+        padding-bottom: 5px;
+        margin-top: 0;
+        margin-bottom: 12px;
+        page-break-after: avoid;
+    }
+    h3 {
+        font-size: 12.5pt;
+        color: #3B5B43;
+        margin-top: 14px;
+        margin-bottom: 6px;
+    }
+    p { margin: 0 0 10px; }
+    .brand {
+        font-family: 'Georgia', serif;
+        font-size: 13pt;
+        color: #3B5B43;
+        letter-spacing: 0.04em;
+        margin-bottom: 6px;
+    }
+    .path-label {
+        display: inline-block;
+        font-family: 'Helvetica', sans-serif;
+        font-size: 9pt;
+        font-weight: bold;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: #D99C5B;
+        margin-bottom: 10px;
+    }
+    .cover {
+        text-align: center;
+        padding-top: 40px;
+        page-break-after: always;
+    }
+    .cover-marks {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 18px;
+        margin-bottom: 14px;
+    }
+    .cover-marks img {
+        width: 44px;
+        height: 44px;
+    }
+    .cover-intro {
+        margin-top: 28px;
+        text-align: left;
+        background-color: #FFFFFF;
+        padding: 22px 26px;
+        border-left: 6px solid #3B5B43;
+        border-radius: 4px;
+        font-size: 11.5pt;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+    }
+    .page-break { page-break-before: always; }
+    .checklist {
+        list-style: none;
+        padding-left: 0;
+        margin: 0 0 8px;
+    }
+    .checklist li {
+        margin-bottom: 7px;
+        padding-left: 30px;
+        position: relative;
+        font-size: 10.5pt;
+    }
+    .checklist li::before {
+        content: '';
+        position: absolute;
+        left: 4px;
+        top: 2px;
+        width: 14px;
+        height: 14px;
+        border: 2px solid #D99C5B;
+        border-radius: 3px;
+        background-color: #FFFFFF;
+    }
+    .stage-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 10px 0 14px;
+        background: #FFFFFF;
+    }
+    .stage-table th, .stage-table td {
+        border: 1px solid #3B5B43;
+        padding: 9px 11px;
+        text-align: left;
+        font-size: 10pt;
+        vertical-align: top;
+    }
+    .stage-table th {
+        background-color: #3B5B43;
+        color: #FFFFFF;
+        font-weight: bold;
+        width: 26%;
+    }
+    .callout {
+        background-color: #FFFFFF;
+        border: 1px solid #3B5B43;
+        padding: 12px 14px;
+        border-radius: 4px;
+        margin: 10px 0 0;
+    }
+    .callout h3 { margin-top: 0; }
+    .fill-row {
+        margin: 0 0 8px;
+        font-size: 10.5pt;
+    }
+    .fill-blank {
+        border-bottom: 1px solid #3B5B43;
+        display: inline-block;
+        min-width: 200px;
+        height: 1em;
+    }
+    .ledger-box {
+        background: #FFFFFF;
+        border: 1px solid #3B5B43;
+        border-radius: 4px;
+        padding: 14px 16px;
+        margin-bottom: 12px;
+    }
+    .log-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 8px;
+        background: #FFFFFF;
+        font-size: 9pt;
+    }
+    .log-table th, .log-table td {
+        border: 1px solid #3B5B43;
+        padding: 8px 6px;
+        text-align: left;
+    }
+    .log-table th {
+        background: #3B5B43;
+        color: #FFFFFF;
+        font-weight: bold;
+        font-size: 8.5pt;
+        text-transform: uppercase;
+        letter-spacing: 0.3px;
+    }
+    .log-table td { height: 22px; }
+    .bcs-grid {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 8px 0 12px;
+        background: #FFFFFF;
+    }
+    .bcs-grid th, .bcs-grid td {
+        border: 1px solid #3B5B43;
+        padding: 10px 11px;
+        vertical-align: top;
+        font-size: 10pt;
+    }
+    .bcs-grid th {
+        background: #D99C5B;
+        color: #FFFFFF;
+        width: 22%;
+        font-weight: bold;
+    }
+    .score-line {
+        margin: 8px 0 14px;
+        font-size: 10.5pt;
+    }
+    .score-boxes {
+        display: inline-block;
+        margin-left: 8px;
+    }
+    .score-box {
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        border: 2px solid #D99C5B;
+        border-radius: 3px;
+        margin-right: 6px;
+        vertical-align: middle;
+        background: #FFFFFF;
+    }
+    .routine-box {
+        background-color: #FFFFFF;
+        border-left: 4px solid #D99C5B;
+        padding: 10px 14px;
+        margin-bottom: 10px;
+        border-radius: 0 4px 4px 0;
+    }
+    .routine-box h3 {
+        margin-top: 0;
+        margin-bottom: 4px;
+        color: #3B5B43;
+        font-size: 12pt;
+    }
+    .why {
+        font-size: 10pt;
+        margin-bottom: 6px;
+    }
+    .note {
+        font-size: 9pt;
+        color: #3B5B43;
+        font-style: italic;
+        margin: 4px 0 0;
+    }
+    .cta-box {
+        margin-top: 12px;
+        background: #FFFFFF;
+        border: 1px dashed #3B5B43;
+        border-radius: 4px;
+        padding: 12px 14px;
+        font-size: 10pt;
+    }
+    .cta-box strong { color: #3B5B43; }
+    .meal-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 8px 0;
+        background: #FFFFFF;
+    }
+    .meal-table th, .meal-table td {
+        border: 1px solid #3B5B43;
+        padding: 9px 11px;
+        font-size: 10pt;
+        text-align: left;
+    }
+    .meal-table th {
+        background: #3B5B43;
+        color: #FFFFFF;
+        width: 36%;
+    }
+    .meal-table td { height: 26px; }
+</style>
+</head>
+<body>
+
+    <!-- COVER -->
+    <div class="cover">
+        <div class="cover-marks">
+            <img src="public/icons/01-soft-paw-heart.svg" alt="" />
+            <img src="public/icons/10-guardian-shield-heart.svg" alt="" />
+        </div>
+        <div class="brand">Paws &amp; Tasks</div>
+        <div class="path-label">The Guardian</div>
+        <h1>Health &amp; Nutrition Vault</h1>
+        <div class="subtitle">A practical guide to longevity and everyday wellness</div>
+
+        <div class="cover-intro">
+            <p><strong>Small daily habits protect a long, happy life.</strong></p>
+            <p>Longevity is rarely about dramatic overhauls. It comes from noticing small changes early, keeping records in one place, and repeating simple preventative routines.</p>
+            <p>This kit gives you a clear home for their medical baseline, nutrition, and five-minute wellness habits. Take it one checkbox at a time. You’ve got this.</p>
+        </div>
+    </div>
+
+    <!-- LONGEVITY + LIFE STAGE -->
+    <div class="page-break">
+        <h2>1. The Longevity Mindset</h2>
+        <p>Preventative care starts with active observation. Three habits that protect long-term health:</p>
+        <ul class="checklist">
+            <li><strong>Know their baseline</strong> — check energy, coat, gum color, and appetite regularly so subtle changes stand out.</li>
+            <li><strong>Weigh-ins matter</strong> — a monthly weigh-in catches drift before it becomes joint stress or energy loss.</li>
+            <li><strong>Pace, don’t rush</strong> — change food portions or exercise over 7–10 days so their body can adapt.</li>
+        </ul>
+
+        <h3>Adjust by life stage</h3>
+        <p>Use your Pathfinder answer (or what you see at home) to focus this week’s effort:</p>
+        <table class="stage-table">
+            <tr>
+                <th>Growing young one</th>
+                <td>Growth-appropriate portions, gentle handling practice, and short positive intro to dental/ear checks.</td>
+            </tr>
+            <tr>
+                <th>Active adult</th>
+                <td>Stay consistent on weight + dental. Keep meals measured; protect joints with warm-ups before hard play.</td>
+            </tr>
+            <tr>
+                <th>Slower senior</th>
+                <td>Shorter, softer movement; sharper baseline checks; talk with your vet about comfort, appetite, and mobility.</td>
+            </tr>
+        </table>
+
+        <div class="callout">
+            <h3>This week’s focus</h3>
+            <p class="fill-row">Life stage: <span class="fill-blank" style="width: 220px;"></span></p>
+            <p class="fill-row" style="margin-bottom: 0;">Top health priority: <span class="fill-blank" style="width: 280px;"></span></p>
+        </div>
+    </div>
+
+    <!-- MEDICAL LEDGER -->
+    <div class="page-break">
+        <h2>2. Medical &amp; Vitals Ledger</h2>
+        <p>Keep this updated and easy to grab for vet visits, sitters, or emergencies.</p>
+
+        <div class="ledger-box">
+            <p class="fill-row">Pet name: <span class="fill-blank" style="width: 340px;"></span></p>
+            <p class="fill-row">Microchip ID: <span class="fill-blank" style="width: 320px;"></span></p>
+            <p class="fill-row">Ideal target weight: <span class="fill-blank" style="width: 100px;"></span> lbs / kg</p>
+            <p class="fill-row">Primary veterinarian &amp; phone: <span class="fill-blank" style="width: 240px;"></span></p>
+            <p class="fill-row">Emergency clinic contact: <span class="fill-blank" style="width: 255px;"></span></p>
+            <p class="fill-row" style="margin-bottom: 0;">Known allergies / notes: <span class="fill-blank" style="width: 280px;"></span></p>
+        </div>
+
+        <h3>Current medications</h3>
+        <table class="log-table">
+            <tr>
+                <th style="width: 28%;">Medication</th>
+                <th style="width: 18%;">Dosage</th>
+                <th style="width: 22%;">When</th>
+                <th>Notes</th>
+            </tr>
+            <tr><td></td><td></td><td></td><td></td></tr>
+            <tr><td></td><td></td><td></td><td></td></tr>
+            <tr><td></td><td></td><td></td><td></td></tr>
+        </table>
+
+        <h3>Preventative care &amp; vaccine log</h3>
+        <table class="log-table">
+            <tr>
+                <th style="width: 16%;">Date</th>
+                <th style="width: 28%;">Treatment / vaccine</th>
+                <th style="width: 14%;">Dosage</th>
+                <th style="width: 16%;">Next due</th>
+                <th>Vet notes</th>
+            </tr>
+            <tr><td></td><td></td><td></td><td></td><td></td></tr>
+            <tr><td></td><td></td><td></td><td></td><td></td></tr>
+            <tr><td></td><td></td><td></td><td></td><td></td></tr>
+            <tr><td></td><td></td><td></td><td></td><td></td></tr>
+            <tr><td></td><td></td><td></td><td></td><td></td></tr>
+            <tr><td></td><td></td><td></td><td></td><td></td></tr>
+        </table>
+    </div>
+
+    <!-- BCS + NUTRITION -->
+    <div class="page-break">
+        <h2>3. Body Condition &amp; Nutrition</h2>
+        <p>A quick check to assess condition and keep energy steady.</p>
+
+        <h3>Body Condition Score (BCS) quick-check</h3>
+        <table class="bcs-grid">
+            <tr>
+                <th>Under</th>
+                <td>Ribs, spine, and hip bones are easy to see. Little or no fat cover when you feel along the sides.</td>
+            </tr>
+            <tr>
+                <th>Ideal</th>
+                <td>Ribs easy to feel under a light fat layer. Clear waist from above; gentle abdominal tuck from the side.</td>
+            </tr>
+            <tr>
+                <th>Over</th>
+                <td>Ribs hard to feel under thick fat. Little or no waist from above; tummy may droop from the side.</td>
+            </tr>
+        </table>
+        <p class="score-line">
+            Today’s score:
+            <span class="score-boxes">
+                <span class="score-box"></span> Under
+                <span class="score-box"></span> Ideal
+                <span class="score-box"></span> Over
+            </span>
+        </p>
+
+        <h3>Daily meal &amp; hydration</h3>
+        <table class="meal-table">
+            <tr>
+                <th>Morning portion</th>
+                <td>________________ cups / grams</td>
+            </tr>
+            <tr>
+                <th>Evening portion</th>
+                <td>________________ cups / grams</td>
+            </tr>
+            <tr>
+                <th>Treats allowance</th>
+                <td>Keep treats under ~10% of daily calories</td>
+            </tr>
+            <tr>
+                <th>Hydration</th>
+                <td>Fresh water daily (a splash of water or pet-safe broth in food can help)</td>
+            </tr>
+        </table>
+        <p class="note">Treat ideas should be pet-safe for your species. When unsure, ask your vet before offering new foods.</p>
+    </div>
+
+    <!-- DAILY ROUTINES -->
+    <div class="page-break">
+        <h2>4. Daily Preventative Routines</h2>
+        <p style="margin-bottom: 8px;">Five-minute practices for the top longevity priorities from The Guardian path.</p>
+
+        <div class="routine-box">
+            <h3>1. Dental care &amp; hygiene</h3>
+            <p class="why"><strong>Why it matters:</strong> Mouth health supports whole-body wellness over time.</p>
+            <ul class="checklist">
+                <li>Days 1–3: let them taste pet-safe toothpaste from your finger.</li>
+                <li>Days 4–7: gently rub outer teeth with a soft finger brush or gauze.</li>
+                <li>Reward right after every short session.</li>
+                <li>Aim for ~30 seconds, a few times a week — consistency beats perfection.</li>
+            </ul>
+        </div>
+
+        <div class="routine-box">
+            <h3>2. Joint mobility &amp; soft movement</h3>
+            <p class="why"><strong>Why it matters:</strong> Comfortable joints keep them active and playful longer.</p>
+            <ul class="checklist">
+                <li>Add rug runners on slick floors to reduce slipping.</li>
+                <li>Warm up with 2 minutes of easy walking before fetch or hard play.</li>
+                <li>For seniors: short walks, gentle rear-leg massage, no forced stretching.</li>
+                <li>Stop if they tense, limp, or disengage — comfort first.</li>
+            </ul>
+        </div>
+
+        <div class="routine-box">
+            <h3>3. Digestion &amp; weight management</h3>
+            <p class="why"><strong>Why it matters:</strong> Staying near ideal weight supports energy, joints, and lifespan.</p>
+            <ul class="checklist">
+                <li>Measure meals (scale or marked scoop) instead of guessing.</li>
+                <li>Swap some high-calorie treats for pet-safe, lower-calorie options your vet is happy with.</li>
+                <li>Log one weigh-in each month on the ledger page.</li>
+                <li>Change portions gradually over 7–10 days if you adjust food.</li>
+            </ul>
+        </div>
+
+        <div class="cta-box">
+            <p><strong>Want more health trackers and custom checklists?</strong> You’re on The Guardian path — keep using this vault, and explore more Pathfinder tools at <strong>pawsandtasks.com</strong> whenever you’re ready.</p>
+            <p style="margin-bottom: 0;">Building better habits, one path at a time.</p>
+        </div>
+    </div>
+
+</body>
+</html>
