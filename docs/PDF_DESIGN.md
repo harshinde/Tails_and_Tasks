@@ -212,4 +212,19 @@ Source HTML + generator: `content/toolkits/newcomer_welcome_kit.html`, `scripts/
 | [ ] | `diy-pet-toy-templates` | DIY Pet Toy Templates | Best Friend |
 | [ ] | `pet-behavior-troubleshooting` | Pet Behavior Troubleshooting Guide | Guide |
 
-Update checkboxes here and in [TOOLKIT_CATALOG.md](./TOOLKIT_CATALOG.md) as each ships.
+## 8. Transactional email design (Resend)
+
+Toolkit emails are built in `src/lib/email-templates/toolkit-email.ts` as table-based HTML (email-client safe).
+
+| Element | Spec |
+| --- | --- |
+| Layout | Centered card, max-width 560px |
+| Brand | Georgia “Paws & Tasks” wordmark |
+| Title | Italic Georgia in path primary |
+| Body | Helvetica/Arial sans for readability |
+| Accent bars | Primary + secondary path colors at top of card |
+| Checklist preview | Welcome Home only — secondary-accent checkbox squares |
+| CTA | Pill button → pawsandtasks.com |
+| Themes | Path palettes from §3 (Newcomer for Welcome Home) |
+
+Plain-text fallback is always included for clients that strip HTML.
