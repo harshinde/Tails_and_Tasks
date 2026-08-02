@@ -116,12 +116,12 @@ Add PDFs as:
 
 ```text
 public/toolkits/newcomer.pdf      # shipped — Welcome Home
-public/toolkits/guide.pdf
-public/toolkits/guardian.pdf
+public/toolkits/guide.pdf         # shipped — Behavior & Habit Mastery
+public/toolkits/guardian.pdf      # shipped — Health & Nutrition Vault
 public/toolkits/best-friend.pdf   # shipped — Lifestyle & Play Bundle
 ```
 
-Regenerate Best Friend kit: `python3 scripts/generate_best_friend_pdf.py`  
+Regenerate kits: `python3 scripts/generate_guide_pdf.py` · `python3 scripts/generate_guardian_pdf.py` · `python3 scripts/generate_best_friend_pdf.py`  
 Until a path file exists, the confirmation email still sends (without attachment).
 ## Analytics events
 

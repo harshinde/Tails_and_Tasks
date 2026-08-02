@@ -4,8 +4,8 @@ Gated path bundles attached by `/api/subscribe` when present at:
 
 ```text
 public/toolkits/newcomer.pdf      # Hero “Welcome Home Starter Kit” ✓ shipped
-public/toolkits/guide.pdf
-public/toolkits/guardian.pdf
+public/toolkits/guide.pdf         # Pathfinder Guide kit ✓ shipped
+public/toolkits/guardian.pdf      # Pathfinder Guardian kit ✓ shipped
 public/toolkits/best-friend.pdf   # Pathfinder Best Friend kit ✓ shipped
 ```
 
@@ -28,6 +28,41 @@ python3 scripts/generate_newcomer_pdf.py
 
 Source: `content/toolkits/newcomer_welcome_kit.html`  
 Design tokens: Newcomer palette in `docs/PDF_DESIGN.md`.
+
+## `guide.pdf` — Behavior & Habit Mastery (shipped)
+
+Pathfinder **guide** email attachment (`path_id=guide`). Sections:
+
+1. The 5-Minute Philosophy (+ attention-span session tips + Core Rules)  
+2. The 21-Day Habit Tracker (mission + daily grid + weekly reflections)  
+3. The Big Three interventions (leash / vocalizing / ignoring cues)  
+
+**Regenerate after HTML edits:**
+
+```bash
+python3 scripts/generate_guide_pdf.py
+```
+
+Source: `content/toolkits/guide_habit_mastery.html`  
+Design tokens: Guide palette in `docs/PDF_DESIGN.md`.
+
+## `guardian.pdf` — Health & Nutrition Vault (shipped)
+
+Pathfinder **guardian** email attachment (`path_id=guardian`). Sections:
+
+1. The Longevity Mindset (+ life-stage tips)  
+2. Medical & Vitals Ledger (contacts, meds, vaccine log)  
+3. Body Condition & Nutrition (BCS + meal/hydration)  
+4. Daily Preventative Routines (dental, joints, weight)  
+
+**Regenerate after HTML edits:**
+
+```bash
+python3 scripts/generate_guardian_pdf.py
+```
+
+Source: `content/toolkits/guardian_health_vault.html`  
+Design tokens: Guardian palette in `docs/PDF_DESIGN.md`.
 
 ## `best-friend.pdf` — Lifestyle & Play Bundle (shipped)
 

@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Build better pet habits, five minutes at a time",
     description:
-      "Get your free Welcome Home starter kit instantly — or take the Pathfinder for a custom toolkit made just for you and your pet.",
+      "Get your free Welcome Home starter kit instantly or take the Pathfinder for a custom toolkit made for you and your pet.",
     type: "website",
   },
 };

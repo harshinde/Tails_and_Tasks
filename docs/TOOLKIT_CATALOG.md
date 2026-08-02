@@ -91,10 +91,10 @@ MVP may also ship other path bundles as single `/{pathId}.pdf` files, then split
 
 | Status | Product idea | Description | Delivery |
 | --- | --- | --- | --- |
-| [ ] | Pet Training Progress Tracker | Goal-setting templates, progress charts, and reward systems to motivate successful training. | Both |
-| [ ] | Pet Training Guide | Comprehensive strategies covering basic obedience, advanced tricks, and behavior modification. | PDF |
-| [x] | Pet Behavior Troubleshooting Guide | Practical solutions and training tips for common problems like barking or scratching. **★ Ungated tasting menu #5 (closer)** · **◆ Welcome Home kit §5** | PDF |
-| [ ] | Pet Behavior Modification Worksheets | Tracking sheets and progress logs to help owners address specific behavior issues. | Both |
+| [x] | Pet Training Progress Tracker | Goal-setting templates, progress charts, and reward systems to motivate successful training. **◆ Guide kit §2 (21-day tracker)** | Both |
+| [x] | Pet Training Guide | Comprehensive strategies covering basic obedience, advanced tricks, and behavior modification. **◆ Guide kit §1 (5-Minute Philosophy)** | PDF |
+| [x] | Pet Behavior Troubleshooting Guide | Practical solutions and training tips for common problems like barking or scratching. **★ Ungated tasting menu #5 (closer)** · **◆ Welcome Home kit §5** · **◆ Guide kit §3 (Big Three)** | PDF |
+| [x] | Pet Behavior Modification Worksheets | Tracking sheets and progress logs to help owners address specific behavior issues. **◆ Guide kit §2** | Both |
 | [ ] | Pet Socialization Guide | Tips for safely introducing pets to new environments, animals, and people. | PDF |
 | [ ] | Guide to Training Service Animals | Training techniques and certification requirements for selecting and raising service animals. | PDF |
 | [ ] | Guide to Training Therapy Animals | Step-by-step techniques and certification processes for raising therapy animals. | PDF |
@@ -111,10 +111,10 @@ MVP may also ship other path bundles as single `/{pathId}.pdf` files, then split
 
 | Status | Product idea | Description | Delivery |
 | --- | --- | --- | --- |
-| [ ] | Pet Wellness Journal | Comprehensive journal to monitor a pet's health, diet, exercise, and behavior over time. | Both |
-| [x] | Pet Health Record Sheets | Track medical history, vaccinations, vet visits, and medications in one centralized place. **★ Ungated tasting menu #3** · **◆ Welcome Home kit §4** | Both |
-| [ ] | Pet Nutrition Planner | Meal planning templates, dietary guidelines, and tracking sheets for balanced pet diets. | Both |
-| [ ] | Pet Medication Tracker | A log for pet owners to track medications, dosages, and administration schedules accurately. | Both |
+| [x] | Pet Wellness Journal | Comprehensive journal to monitor a pet's health, diet, exercise, and behavior over time. **◆ Guardian kit §1–4** | Both |
+| [x] | Pet Health Record Sheets | Track medical history, vaccinations, vet visits, and medications in one centralized place. **★ Ungated tasting menu #3** · **◆ Welcome Home kit §4** · **◆ Guardian kit §2** | Both |
+| [x] | Pet Nutrition Planner | Meal planning templates, dietary guidelines, and tracking sheets for balanced pet diets. **◆ Guardian kit §3** | Both |
+| [x] | Pet Medication Tracker | A log for pet owners to track medications, dosages, and administration schedules accurately. **◆ Guardian kit §2** | Both |
 | [ ] | Pet First Aid Manual | Detailed manual covering common emergencies, first aid checklists, and illness recognition tips. | PDF |
 | [ ] | Pet Emergency Preparedness Plan | Evacuation checklists, emergency contacts, and first aid guidance for disaster scenarios. | PDF |
 | [ ] | Pet Breed Health Guides | Breed-specific guides detailing common health issues, preventive care, and tailored care tips. | PDF |

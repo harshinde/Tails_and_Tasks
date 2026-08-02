@@ -65,9 +65,10 @@ export function HeroSection({
             Build better pet habits, five minutes at a time.
           </h1>
           <p className="hero__subhead">
-            Join 10,000+ pet parents creating calmer, happier routines. Get your
-            free Welcome Home starter kit instantly — or take the Pathfinder for
-            a custom toolkit.
+            Join 10,000+ pet parents creating calmer, happier routines.
+            <br />
+            Get your free Welcome Home starter kit instantly or take the
+            Pathfinder for a custom toolkit.
           </p>
 
           {succeeded ? (
@@ -149,7 +150,7 @@ export function HeroSection({
               </button>
 
               <p className="hero__micro">
-                No spam. Just useful, bite-sized help for real life with pets.
+                No spam. Useful, bite-sized help for real life with pets.
               </p>
 
               <p className="hero__proof">
