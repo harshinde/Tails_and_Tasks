@@ -121,15 +121,33 @@ Rules: Strong weight contrast, comfortable line lengths (45–75 characters), no
 
 ## Iconography
 
-Canonical source: **[ICONOGRAPHY.md](./ICONOGRAPHY.md)**
+Canonical specs: **[ICONOGRAPHY.md](./ICONOGRAPHY.md)**  
+**SVG asset folder (source of truth):** [`public/icons/`](../public/icons/) → served as `/icons/<file>.svg`
 
-**Style**: Soft rounded terminals, consistent ~1.5–2px stroke, 24×24 grid, organic-friendly shapes.
+### Icons usage summary
 
-**Signature**: Soft Paw + Heart (logo mark, favicon, decorative accent).
+**Design language**
+- Default: Teal `#008080`
+- Active / CTA / Selected: Warm Orange `#FF6B35`
+- Success: Green `#10B981` or teal + check
+- Keep stroke weight (~1.5–2px) and rounded style consistent
+- Prefer line versions for UI; lightly filled versions for hero/marketing
 
-**Homepage starter set**: Soft Paw + Heart · Free Resource / Gift · Email Envelope + Paw · Completed Check · Download / Instant Access · Checklist Paw · Progress Tracker · four Pathfinder category icons · Community / Join.
+**Website**
+- Inline hero signup: Free Resource / Gift and/or Email Envelope + Paw (optional accents; do not push fields below the fold)
+- Pathfinder cards: Newcomer · Guide · Guardian · Best Friend category icons
+- Success / confirmation: Completed Check + Soft Paw + Heart (+ Download when relevant)
+- Header / brand: Soft Paw + Heart; Community / Join for “Join 10,000+”
+- Apply hover and active color variants from this system
 
-**Color variants**: Teal default · darker teal / soft fill hover · orange active/CTA · success green completion · muted disabled.
+**PDF / email kits**
+- Soft Paw + Heart as small brand mark in headers/footers
+- Checklist Paw and path category icons next to relevant sections
+- Completed Check for finished items
+- Keep icons small, teal by default, consistent with the website
+
+**Agent instruction**  
+Always prefer icons from `public/icons/`. Match colors and usage to this design system. Keep the soft, rounded, approachable style across website and PDF checklists. React components under `src/components/icons/` should stay visually aligned with those SVGs (or load them directly).
 
 ---
 
@@ -199,6 +217,6 @@ Layout notes: consistent spacing scale rhythm; large touch targets; never crowd;
 | CSS variables | `src/app/globals.css` `:root` |
 | Fonts | `src/app/layout.tsx` (next/font) |
 | Header / logo | `src/components/SiteHeader.tsx`, `src/components/icons/*` |
-| Icon system | `docs/ICONOGRAPHY.md` · `src/components/icons/*` |
+| Icon system | `public/icons/` (SVG source of truth) · `docs/ICONOGRAPHY.md` · `src/components/icons/*` |
 | Hero + inline form / Pathfinder / quiz | `HeroSection`, `SegmentationGrid`, `QuizModal`, `globals.css` |
 | Path PDF palettes | Unchanged — see `PDF_DESIGN.md` |
