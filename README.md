@@ -9,6 +9,7 @@ Hosted on **Cloudflare Workers** (OpenNext) at [pawsandtasks.com](https://pawsan
 - [PRD (as-built)](./docs/PRD.md)
 - [Design system (PetBond Community)](./docs/DESIGN.md)
 - [Iconography system](./docs/ICONOGRAPHY.md)
+- [Icon SVG assets](./public/icons/) (`/icons/*.svg`)
 - [Tech & UX architecture](./docs/ARCHITECTURE.md)
 - [Toolkit product catalog (65 ideas)](./docs/TOOLKIT_CATALOG.md)
 - [PDF design system & ungated resources](./docs/PDF_DESIGN.md)
