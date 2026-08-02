@@ -437,8 +437,14 @@ a {
   animation: tail-wag 1.4s ease-in-out infinite;
 }
 
-.hero-mascot__eyes {
-  animation: blink 5.5s ease-in-out infinite;
+.hero-mascot__twinkle {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: eye-twinkle 3.6s ease-in-out infinite;
+}
+
+.hero-mascot__twinkle--right {
+  animation-delay: 0.45s;
 }
 
 .hero__copy {
