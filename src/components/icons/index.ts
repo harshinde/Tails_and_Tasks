@@ -1,3 +1,5 @@
+export { BrandIcon } from "@/components/icons/BrandIcon";
+export { ICON_ASSETS } from "@/components/icons/assets";
 export { SoftPawHeart } from "@/components/icons/SoftPawHeart";
 export { FreeResourceGift } from "@/components/icons/FreeResourceGift";
 export { EmailPaw } from "@/components/icons/EmailPaw";
@@ -11,3 +13,4 @@ export { GuideIcon } from "@/components/icons/pathfinder/GuideIcon";
 export { GuardianIcon } from "@/components/icons/pathfinder/GuardianIcon";
 export { BestFriendIcon } from "@/components/icons/pathfinder/BestFriendIcon";
 export type { IconProps, IconVariant } from "@/components/icons/types";
+export type { IconAssetKey } from "@/components/icons/assets";

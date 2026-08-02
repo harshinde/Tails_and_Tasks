@@ -106,7 +106,7 @@ All brand SVG icons live in **`public/icons/`**.
 
 See [`public/icons/README.md`](../public/icons/README.md) for the expected filename list. Drop exported SVGs there; do not invent a second parallel asset tree.
 
-React UI wrappers currently live under `src/components/icons/` and must stay aligned with the SVGs in `public/icons/` (prefer referencing those files once they are present).
+React UI loads assets from this folder via `BrandIcon` (`src/components/icons/BrandIcon.tsx`) using CSS mask + `currentColor` for teal / orange / success variants. Asset SVGs use black fills with `fill-rule="evenodd"` so hollow detail survives masking.
 
 ## Icons usage summary
 

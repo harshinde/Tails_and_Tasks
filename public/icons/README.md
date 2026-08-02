@@ -33,6 +33,12 @@ Locally: `/icons/<filename>.svg`
 - Success: Green `#10B981` or teal + check
 - Prefer line versions for UI; lightly filled for hero/marketing
 
+## Website wiring
+
+React UI loads these files through `BrandIcon` (`src/components/icons/BrandIcon.tsx`) using CSS mask + `currentColor`, so variant classes can recolor them (teal / orange / success).
+
+SVGs here use black fills with `fill-rule="evenodd"` (export backgrounds / white knockouts stripped) so CSS masks preserve hollow detail while the UI color comes from `currentColor`.
+
 ## Related docs
 
 - [DESIGN.md](../../docs/DESIGN.md)

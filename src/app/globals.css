@@ -241,13 +241,55 @@ a {
 
 /* Icon system variants — docs/ICONOGRAPHY.md */
 .icon {
-  display: block;
+  display: inline-block;
   flex-shrink: 0;
   color: var(--color-primary);
   transition:
     color 180ms var(--ease-out),
     transform 180ms var(--ease-out),
     opacity 180ms var(--ease-out);
+}
+
+.icon-asset {
+  display: inline-block;
+  flex-shrink: 0;
+  background-color: currentColor;
+  mask-image: var(--icon-url);
+  mask-mode: alpha;
+  mask-position: center;
+  mask-repeat: no-repeat;
+  mask-size: contain;
+  -webkit-mask-image: var(--icon-url);
+  -webkit-mask-position: center;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: contain;
+}
+
+.progress-tracker {
+  display: grid;
+  gap: 0.55rem;
+  width: min(100%, 220px);
+}
+
+.progress-tracker__mark {
+  width: 2rem !important;
+  height: 2rem !important;
+}
+
+.progress-tracker__segments {
+  display: flex;
+  gap: 0.35rem;
+}
+
+.progress-tracker__segment {
+  flex: 1;
+  height: 4px;
+  border-radius: 999px;
+  background: rgba(45, 62, 80, 0.12);
+}
+
+.progress-tracker__segment.is-active {
+  background: var(--color-accent);
 }
 
 .icon--default {
@@ -268,7 +310,7 @@ a {
 }
 
 .icon--success {
-  color: var(--color-primary);
+  color: var(--color-success);
 }
 
 .icon--disabled {
@@ -838,8 +880,7 @@ a {
 }
 
 .quiz-progress__icon {
-  width: min(100%, 180px);
-  height: auto;
+  width: min(100%, 220px);
 }
 
 .quiz-eyebrow {

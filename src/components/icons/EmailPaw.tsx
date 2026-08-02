@@ -1,44 +1,6 @@
-import { iconClassName, type IconProps } from "@/components/icons/types";
+import { BrandIcon } from "@/components/icons/BrandIcon";
+import type { IconProps } from "@/components/icons/types";
 
-/** Envelope with paw stamp */
-export function EmailPaw({
-  className,
-  size = 24,
-  title,
-  variant = "default",
-}: IconProps) {
-  return (
-    <svg
-      className={iconClassName(variant, className)}
-      width={size}
-      height={size}
-      viewBox="0 0 24 24"
-      role={title ? "img" : "presentation"}
-      aria-label={title}
-      aria-hidden={title ? undefined : true}
-      fill="none"
-    >
-      <rect
-        x="3"
-        y="5.5"
-        width="18"
-        height="13"
-        rx="2.5"
-        stroke="currentColor"
-        strokeWidth="1.75"
-      />
-      <path
-        d="M4.25 7.5 12 13.25 19.75 7.5"
-        stroke="currentColor"
-        strokeWidth="1.75"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-      <circle cx="18" cy="16.25" r="3.35" fill="#E0F2F1" stroke="currentColor" strokeWidth="1.4" />
-      <path
-        d="M16.85 15.35c0-.4.28-.7.55-.7s.55.3.55.7-.28.7-.55.7-.55-.3-.55-.7Zm1.65 0c0-.4.28-.7.55-.7s.55.3.55.7-.28.7-.55.7-.55-.3-.55-.7ZM18 18.05c-1-.65-1.55-1.3-1.55-1.9 0-.45.35-.8.75-.8.25 0 .45.12.6.3.05.05.1.05.15 0 .15-.18.35-.3.6-.3.4 0 .75.35.75.8 0 .6-.55 1.25-1.55 1.9Z"
-        fill="currentColor"
-      />
-    </svg>
-  );
+export function EmailPaw(props: IconProps) {
+  return <BrandIcon name="emailEnvelopePaw" {...props} />;
 }
