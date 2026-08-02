@@ -393,12 +393,28 @@ a {
   background: var(--color-surface);
 }
 
+.hero__photo-frame--crossfade {
+  position: relative;
+}
+
 .hero__photo {
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center 30%;
   display: block;
+}
+
+.hero__photo-frame--crossfade .hero__photo {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 1.1s var(--ease-out);
+}
+
+.hero__photo-frame--crossfade .hero__photo.is-active {
+  opacity: 1;
+  z-index: 1;
 }
 
 .hero-mascot {
@@ -1363,6 +1379,10 @@ a {
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
+  }
+
+  .hero__photo-frame--crossfade .hero__photo {
+    transition: none;
   }
 
   .hero-mascot__head,
