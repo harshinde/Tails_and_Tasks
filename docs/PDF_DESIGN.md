@@ -202,6 +202,15 @@ Then tasting-menu standalones: Health Record Sheets → DIY Toy Templates → Ca
 
 Source HTML + generator: `content/toolkits/newcomer_welcome_kit.html`, `scripts/generate_newcomer_pdf.py`
 
+### 7.1d Best Friend path bundle (`best-friend.pdf`)
+
+| Status | File | Contents |
+| --- | --- | --- |
+| [x] | `public/toolkits/best-friend.pdf` | Enrichment philosophy, DIY projects, recipes, adventure checklists |
+
+Source HTML + generator: `content/toolkits/best_friend_lifestyle_play.html`, `scripts/generate_best_friend_pdf.py`  
+Palette: Best Friend tokens (`--color-bestfriend-*`). Delivery: Pathfinder quiz `path_id=best-friend`.
+
 ### 7.2 Ungated tasting menu
 
 | Status | Slug | Title | Palette |

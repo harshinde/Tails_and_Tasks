@@ -6,7 +6,7 @@ Gated path bundles attached by `/api/subscribe` when present at:
 public/toolkits/newcomer.pdf      # Hero “Welcome Home Starter Kit” ✓ shipped
 public/toolkits/guide.pdf
 public/toolkits/guardian.pdf
-public/toolkits/best-friend.pdf
+public/toolkits/best-friend.pdf   # Pathfinder Best Friend kit ✓ shipped
 ```
 
 ## `newcomer.pdf` — Welcome Home Starter Kit (shipped)
@@ -28,3 +28,21 @@ python3 scripts/generate_newcomer_pdf.py
 
 Source: `content/toolkits/newcomer_welcome_kit.html`  
 Design tokens: Newcomer palette in `docs/PDF_DESIGN.md`.
+
+## `best-friend.pdf` — Lifestyle & Play Bundle (shipped)
+
+Pathfinder **best-friend** email attachment (`path_id=best-friend`). Sections:
+
+1. The Enrichment Philosophy (+ weekend vibe picker)  
+2. DIY Weekend Projects (+ accessories quick wins)  
+3. The Spoil-Them Recipe Box  
+4. Weekend Adventure Checklists (patio, trail, cozy day)  
+
+**Regenerate after HTML edits:**
+
+```bash
+python3 scripts/generate_best_friend_pdf.py
+```
+
+Source: `content/toolkits/best_friend_lifestyle_play.html`  
+Design tokens: Best Friend palette in `docs/PDF_DESIGN.md`.
