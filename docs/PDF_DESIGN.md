@@ -104,13 +104,13 @@ Do **not** attach five separate PDFs in the hero email for MVP. Compile the five
 
 ### Official section checklist (compiled into `newcomer.pdf`)
 
-| § | Catalog item | Purpose |
-| --- | --- | --- |
-| 1 | Home Safety Checklist for Pet Owners | Safety / reduce new-pet anxiety |
-| 2 | Pet Care Schedule Templates | Daily/weekly structure (brand fit) |
-| 3 | 50 Essential Pet Care Checklists | Broad foundational coverage |
-| 4 | Pet Health Record Sheets | Universal medical/vaccine ledger |
-| 5 | Pet Behavior Troubleshooting Guide | High-intent behavior help |
+| § | Catalog item | Purpose | Shipped as |
+| --- | --- | --- | --- |
+| 1 | Home Safety Checklist for Pet Owners | Safety / reduce new-pet anxiety | §1 Home Safety Checklist |
+| 2 | Pet Care Schedule Templates | Daily/weekly structure (brand fit) | §2 Pet Care Schedule Templates |
+| 3 | 50 Essential Pet Care Checklists | Broad foundational coverage | §3 **10 Essential Newcomer Checklists** (focused MVP cut) |
+| 4 | Pet Health Record Sheets | Universal medical/vaccine ledger | §4 Pet Health Record Sheets |
+| 5 | Pet Behavior Troubleshooting Guide | High-intent behavior help | §5 Behavior & Routine Guide |
 
 Arc for the pack: **safety → routine → organization → health → behavior**.
 
@@ -198,7 +198,9 @@ Then tasting-menu standalones: Health Record Sheets → DIY Toy Templates → Ca
 
 | Status | File | Contents |
 | --- | --- | --- |
-| [ ] | `public/toolkits/newcomer.pdf` | §§1–5 compiled Welcome Home Starter Kit |
+| [x] | `public/toolkits/newcomer.pdf` | §§1–5 compiled Welcome Home Starter Kit |
+
+Source HTML + generator: `content/toolkits/newcomer_welcome_kit.html`, `scripts/generate_newcomer_pdf.py`
 
 ### 7.2 Ungated tasting menu
 
@@ -210,4 +212,19 @@ Then tasting-menu standalones: Health Record Sheets → DIY Toy Templates → Ca
 | [ ] | `diy-pet-toy-templates` | DIY Pet Toy Templates | Best Friend |
 | [ ] | `pet-behavior-troubleshooting` | Pet Behavior Troubleshooting Guide | Guide |
 
-Update checkboxes here and in [TOOLKIT_CATALOG.md](./TOOLKIT_CATALOG.md) as each ships.
+## 8. Transactional email design (Resend)
+
+Toolkit emails are built in `src/lib/email-templates/toolkit-email.ts` as table-based HTML (email-client safe).
+
+| Element | Spec |
+| --- | --- |
+| Layout | Centered card, max-width 560px |
+| Brand | Georgia “Paws & Tasks” wordmark |
+| Title | Italic Georgia in path primary |
+| Body | Helvetica/Arial sans for readability |
+| Accent bars | Primary + secondary path colors at top of card |
+| Checklist preview | Welcome Home only — secondary-accent checkbox squares |
+| CTA | Pill button → pawsandtasks.com |
+| Themes | Path palettes from §3 (Newcomer for Welcome Home) |
+
+Plain-text fallback is always included for clients that strip HTML.

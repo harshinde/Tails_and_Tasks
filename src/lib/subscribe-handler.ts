@@ -46,6 +46,7 @@ export async function handleSubscribeRequest(body: unknown) {
     firstName,
     email,
     bundleId: pathId,
+    source,
   });
 
   return NextResponse.json({

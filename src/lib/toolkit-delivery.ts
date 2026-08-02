@@ -1,5 +1,6 @@
 import type { Resend } from "resend";
 import { getBundleById, SITE_URL } from "@/lib/bundles";
+import { buildToolkitEmail } from "@/lib/email-templates/toolkit-email";
 import { getResendFromEmail } from "@/lib/resend";
 import type { BundleId, LeadSource } from "@/lib/types";
 
@@ -17,6 +18,7 @@ interface DeliverToolkitArgs {
   firstName: string;
   email: string;
   bundleId: BundleId;
+  source: LeadSource;
 }
 
 export async function upsertLeadContact(resend: Resend, args: ContactArgs) {
@@ -82,6 +84,7 @@ export async function sendToolkitEmail({
   firstName,
   email,
   bundleId,
+  source,
 }: DeliverToolkitArgs) {
   const bundle = getBundleById(bundleId);
   if (!bundle) {
@@ -89,36 +92,22 @@ export async function sendToolkitEmail({
   }
 
   const attachment = await loadToolkitAttachment(bundleId);
-  const subject = `Your ${bundle.name} toolkit is ready, ${firstName}`;
-
-  const html = `
-    <div style="font-family: Georgia, 'Times New Roman', serif; color: #2C2A28; line-height: 1.5; max-width: 560px; margin: 0 auto;">
-      <p style="font-size: 28px; font-weight: 700; margin: 0 0 8px;">Paws &amp; Tasks</p>
-      <p style="font-size: 18px; margin: 0 0 20px;">Hey ${escapeHtml(firstName)},</p>
-      <p style="font-family: Arial, sans-serif; font-size: 16px; color: #444;">
-        Great choice picking <strong>${escapeHtml(bundle.title)}</strong>.
-        Your <strong>${escapeHtml(bundle.name)}</strong> digital toolkit is on its way.
-      </p>
-      ${
-        attachment
-          ? `<p style="font-family: Arial, sans-serif; font-size: 16px; color: #444;">You'll find your PDF attached to this email.</p>`
-          : `<p style="font-family: Arial, sans-serif; font-size: 16px; color: #444;">We're finalizing the PDF files — this confirmation locks in your ${escapeHtml(bundle.name)} path so we can deliver it next.</p>`
-      }
-      <p style="font-family: Arial, sans-serif; font-size: 14px; color: #777; margin-top: 28px;">
-        Building better habits, one path at a time.<br />
-        — Paws &amp; Tasks
-      </p>
-    </div>
-  `;
+  const template = buildToolkitEmail({
+    firstName,
+    bundle,
+    source,
+    hasAttachment: Boolean(attachment),
+  });
 
   const { data, error } = await resend.emails.send({
     from: getResendFromEmail(),
     to: email,
-    subject,
-    html,
+    subject: template.subject,
+    html: template.html,
+    text: template.text,
     tags: [
       { name: "bundle_id", value: bundleId },
-      { name: "source", value: "pathfinder" },
+      { name: "source", value: source },
     ],
     attachments: attachment ? [attachment] : undefined,
   });
@@ -153,13 +142,4 @@ async function loadToolkitAttachment(bundleId: BundleId) {
   } catch {
     return null;
   }
-}
-
-function escapeHtml(value: string) {
-  return value
-    .replaceAll("&", "&amp;")
-    .replaceAll("<", "&lt;")
-    .replaceAll(">", "&gt;")
-    .replaceAll('"', "&quot;")
-    .replaceAll("'", "&#39;");
 }
