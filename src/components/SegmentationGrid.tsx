@@ -27,37 +27,37 @@ export function SegmentationGrid({ onSelect }: SegmentationGridProps) {
           checklists and daily habits for you and your pet.
         </p>
 
-        <div className="path-grid" role="list">
+        <ul className="path-grid">
           {BUNDLES.map((bundle) => {
             const isHovered = hovered === bundle.id;
 
             return (
-              <button
-                key={bundle.id}
-                type="button"
-                role="listitem"
-                className={`path-card${isHovered ? " is-hovered" : ""}`}
-                style={
-                  {
-                    "--card-accent": bundle.accent,
-                    "--card-wash": bundle.watercolor,
-                  } as CSSProperties
-                }
-                onMouseEnter={() => setHovered(bundle.id)}
-                onMouseLeave={() => setHovered(null)}
-                onFocus={() => setHovered(bundle.id)}
-                onBlur={() => setHovered(null)}
-                onClick={() => onSelect(bundle)}
-              >
-                <div className="path-card__wash" aria-hidden="true" />
-                <PathIcon bundleId={bundle.id} active={isHovered} />
-                <h3 className="path-card__title">{bundle.title}</h3>
-                <p className="path-card__description">{bundle.description}</p>
-                <p className="path-card__supporting">{bundle.supporting}</p>
-              </button>
+              <li key={bundle.id} className="path-grid__item">
+                <button
+                  type="button"
+                  className={`path-card${isHovered ? " is-hovered" : ""}`}
+                  style={
+                    {
+                      "--card-accent": bundle.accent,
+                      "--card-wash": bundle.watercolor,
+                    } as CSSProperties
+                  }
+                  onMouseEnter={() => setHovered(bundle.id)}
+                  onMouseLeave={() => setHovered(null)}
+                  onFocus={() => setHovered(bundle.id)}
+                  onBlur={() => setHovered(null)}
+                  onClick={() => onSelect(bundle)}
+                >
+                  <div className="path-card__wash" aria-hidden="true" />
+                  <PathIcon bundleId={bundle.id} active={isHovered} />
+                  <h3 className="path-card__title">{bundle.title}</h3>
+                  <p className="path-card__description">{bundle.description}</p>
+                  <p className="path-card__supporting">{bundle.supporting}</p>
+                </button>
+              </li>
             );
           })}
-        </div>
+        </ul>
       </div>
     </section>
   );

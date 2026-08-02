@@ -57,7 +57,6 @@ export function SuccessView({ bundle, onDownload }: SuccessViewProps) {
       }, "image/png");
     };
     image.onerror = () => {
-      // Fallback: download SVG if canvas encode fails
       const anchor = document.createElement("a");
       anchor.href = url;
       anchor.download = `paws-and-tasks-${bundle.id}-story.svg`;
@@ -82,10 +81,12 @@ export function SuccessView({ bundle, onDownload }: SuccessViewProps) {
           <h2 id="success-heading" className="success__headline">
             You&apos;re all set!
           </h2>
+          <p className="success__inbox" role="status">
+            Check your inbox for your PDF kit.
+          </p>
           <p className="success__body">
-            Check your inbox for your PDF kit. Your Welcome Home starter kit (or
-            custom toolkit) arrives as easy-to-use checklists you can start
-            today — five minutes at a time.
+            Your Welcome Home starter kit (or custom toolkit) arrives as
+            easy-to-use checklists you can start today — five minutes at a time.
           </p>
           <p className="success__support">
             We&apos;re glad you&apos;re here. You and your pet belong in this
@@ -93,21 +94,21 @@ export function SuccessView({ bundle, onDownload }: SuccessViewProps) {
           </p>
 
           <div className="success__actions">
-            <button
-              type="button"
-              className="btn btn--primary"
-              onClick={handleDownload}
-            >
-              Download Story Graphic
-            </button>
             <a
-              className="btn btn--secondary"
+              className="btn btn--primary"
               href={INSTAGRAM_URL}
               target="_blank"
               rel="noopener noreferrer"
             >
               Back to Instagram
             </a>
+            <button
+              type="button"
+              className="btn btn--secondary"
+              onClick={handleDownload}
+            >
+              Download Story Graphic
+            </button>
           </div>
         </div>
 
