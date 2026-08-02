@@ -8,7 +8,7 @@ import {
   FreeResourceGift,
   SoftPawHeart,
 } from "@/components/icons";
-import { HeroVisualCrossfade } from "@/components/HeroVisualCrossfade";
+import { HeroMascot } from "@/components/mascots/HeroMascot";
 
 interface HeroSectionProps {
   onScrollToPathfinder: () => void;
@@ -192,8 +192,8 @@ export function HeroSection({
           )}
         </div>
 
-        <div className="hero__visual-panel">
-          <HeroVisualCrossfade />
+        <div className="hero__visual-panel" aria-hidden="true">
+          <HeroMascot />
         </div>
       </div>
     </section>
