@@ -17,7 +17,7 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "Paws & Tasks — Build better pet habits",
   description:
-    "Join 10,000+ pet parents creating calmer, happier routines. Get a free Welcome Home starter kit or a custom toolkit made for you and your pet.",
+    "Join our pet parents creating calmer, happier routines. Get a free Welcome Home starter kit or a custom toolkit made for you and your pet.",
   metadataBase: new URL("https://pawsandtasks.com"),
   openGraph: {
     title: "Build better pet habits, five minutes at a time",

@@ -105,7 +105,7 @@ Convert Instagram traffic into tagged email leads by offering free, path-relevan
 
 - **Brand:** Paws & Tasks  
 - **Headline:** Build Better Pet Habits, Five Minutes at a Time.  
-- **Support:** Join 10,000+ pet parents… Welcome Home starter kit… or Pathfinder below.  
+- **Support:** Join our pet parents… Welcome Home starter kit… or Pathfinder below.  
 - **CTA:** Send My Free Kit  
 - **Secondary:** Take the Pathfinder below
 

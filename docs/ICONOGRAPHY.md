@@ -58,7 +58,7 @@ This is the emotional signature of care + connection. Use it sparingly but consi
 
 | Icon Name | Description | Use Cases |
 | --- | --- | --- |
-| **Community / Join** | Two soft overlapping paws (or people + paw) | “Join 10,000+ pet parents”, signup success, community moments |
+| **Community / Join** | Two soft overlapping paws (or people + paw) | Community moments / future social proof (only with validated counts) |
 | **Instagram / Social Share** | Soft camera or simplified social outline with small heart/paw | Future Instagram-driven traffic, social proof, share moments |
 | **Tip / Advice** | Soft lightbulb with a tiny paw as the filament | Educational tips inside checklists or toolkits |
 | **Reminder / Notification** | Soft bell with a gentle curve and small paw | Email reminders, checklist notifications |
@@ -121,7 +121,7 @@ React UI loads assets from this folder via `BrandIcon` (`src/components/icons/Br
 - **Homepage signup (inline in hero, above the fold):** Free Resource / Gift or Email Envelope + Paw as light accents only — never push name/email fields below the fold
 - **Pathfinder cards:** Newcomer, Guide, Guardian, Best Friend category icons; card click opens quiz immediately
 - **Success / confirmation:** Completed Check + Soft Paw + Heart (+ Download / Instant Access when relevant)
-- **Header / CTAs:** Soft Paw + Heart for brand; Community / Join for “Join 10,000+”; Download icon when relevant
+- **Header / CTAs:** Soft Paw + Heart for brand; Download icon when relevant
 - Apply hover and active color variants as defined in DESIGN.md
 
 ### PDF / email kits usage

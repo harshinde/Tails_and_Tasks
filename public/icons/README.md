@@ -23,7 +23,7 @@ Locally: `/icons/<filename>.svg`
 | `09-guide-star-treat.svg` | The Guide | Pathfinder card |
 | `10-guardian-shield-heart.svg` | The Guardian | Pathfinder card |
 | `11-best-friend-leash.svg` | The Best Friend | Pathfinder card |
-| `12-community-two-paws.svg` | Community / Join | “Join 10,000+”, community moments |
+| `12-community-two-paws.svg` | Community / Join | Community moments (use only with validated social proof) |
 
 ## Design language
 
