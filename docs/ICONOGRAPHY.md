@@ -134,18 +134,18 @@ React UI wrappers currently live under `src/components/icons/` and must stay ali
 
 | Icon | SVG asset (`public/icons/`) | React wrapper |
 | --- | --- | --- |
-| Soft Paw + Heart | `soft-paw-heart.svg` | `SoftPawHeart.tsx` |
-| Free Resource / Gift | `free-resource-gift.svg` | `FreeResourceGift.tsx` |
-| Email Envelope + Paw | `email-envelope-paw.svg` | `EmailPaw.tsx` |
-| Completed Check | `completed-check.svg` | `CompletedCheck.tsx` |
-| Download / Instant Access | `download-instant.svg` | `DownloadInstant.tsx` |
-| Checklist Paw | `checklist-paw.svg` | `ChecklistPaw.tsx` |
-| Progress Tracker | `progress-tracker.svg` | `ProgressTracker.tsx` |
-| The Newcomer | `path-newcomer.svg` | `pathfinder/NewcomerIcon.tsx` |
-| The Guide | `path-guide.svg` | `pathfinder/GuideIcon.tsx` |
-| The Guardian | `path-guardian.svg` | `pathfinder/GuardianIcon.tsx` |
-| The Best Friend | `path-best-friend.svg` | `pathfinder/BestFriendIcon.tsx` |
-| Community / Join | `community-join.svg` | `CommunityJoin.tsx` |
+| Soft Paw + Heart | `01-soft-paw-heart.svg` | `SoftPawHeart.tsx` |
+| Checklist Paw | `02-checklist-paw.svg` | `ChecklistPaw.tsx` |
+| Completed Check | `03-completed-check.svg` | `CompletedCheck.tsx` |
+| Free Resource / Gift | `04-gift-free-resource.svg` | `FreeResourceGift.tsx` |
+| Email Envelope + Paw | `05-email-envelope-paw.svg` | `EmailPaw.tsx` |
+| Download / Instant Access | `06-download-access.svg` | `DownloadInstant.tsx` |
+| Progress Tracker | `07-progress-tracker.svg` | `ProgressTracker.tsx` |
+| The Newcomer | `08-newcomer-house.svg` | `pathfinder/NewcomerIcon.tsx` |
+| The Guide | `09-guide-star-treat.svg` | `pathfinder/GuideIcon.tsx` |
+| The Guardian | `10-guardian-shield-heart.svg` | `pathfinder/GuardianIcon.tsx` |
+| The Best Friend | `11-best-friend-leash.svg` | `pathfinder/BestFriendIcon.tsx` |
+| Community / Join | `12-community-two-paws.svg` | `CommunityJoin.tsx` |
 | Shared props / variants | — | `types.ts` |
 
 ## Agent Instruction Summary
