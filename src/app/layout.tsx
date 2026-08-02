@@ -1,28 +1,28 @@
 import type { Metadata } from "next";
-import { DM_Sans, Playfair_Display } from "next/font/google";
+import { Inter, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 
-const playfair = Playfair_Display({
-  variable: "--font-playfair",
+const plusJakarta = Plus_Jakarta_Sans({
+  variable: "--font-heading",
   subsets: ["latin"],
-  weight: ["500", "600", "700"],
+  weight: ["500", "600", "700", "800"],
 });
 
-const dmSans = DM_Sans({
-  variable: "--font-dm-sans",
+const inter = Inter({
+  variable: "--font-body",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
-  title: "Pathfinder | Paws & Tasks",
+  title: "Paws & Tasks — Build better pet habits",
   description:
-    "Take the 30-second Pathfinder quiz to unlock a free custom pet parenting toolkit from Paws & Tasks.",
+    "Join 10,000+ pet parents creating calmer, happier routines. Get a free Welcome Home starter kit or a custom toolkit made for you and your pet.",
   metadataBase: new URL("https://pawsandtasks.com"),
   openGraph: {
-    title: "What kind of pet parent are you?",
+    title: "Build better pet habits, five minutes at a time",
     description:
-      "Unlock a free, custom digital toolkit designed for your daily routine.",
+      "Get your free Welcome Home starter kit instantly — or take the Pathfinder for a custom toolkit made just for you and your pet.",
     type: "website",
   },
 };
@@ -35,7 +35,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${playfair.variable} ${dmSans.variable} h-full antialiased`}
+      className={`${plusJakarta.variable} ${inter.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">{children}</body>
     </html>

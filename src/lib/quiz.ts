@@ -25,8 +25,7 @@ export const QUIZ_BY_PATH: Record<BundleId, PathQuiz> = {
         "Biting, scratching, or chewing",
       ],
     },
-    captureHeadline:
-      "Let's get you settled. Where should we send your Welcome Kit?",
+    captureHeadline: "You're almost there",
   },
   guide: {
     q1: {
@@ -45,8 +44,7 @@ export const QUIZ_BY_PATH: Record<BundleId, PathQuiz> = {
         "Ignoring commands",
       ],
     },
-    captureHeadline:
-      "Let's fix that. Where should we send your Starter Kit?",
+    captureHeadline: "You're almost there",
   },
   guardian: {
     q1: {
@@ -61,8 +59,7 @@ export const QUIZ_BY_PATH: Record<BundleId, PathQuiz> = {
         "Dental care and hygiene",
       ],
     },
-    captureHeadline:
-      "Let's protect their longevity. Where should we send your Health Vault?",
+    captureHeadline: "You're almost there",
   },
   "best-friend": {
     q1: {
@@ -81,8 +78,7 @@ export const QUIZ_BY_PATH: Record<BundleId, PathQuiz> = {
         "Getting fun accessories",
       ],
     },
-    captureHeadline:
-      "Let's make it fun. Where should we send your Lifestyle Bundle?",
+    captureHeadline: "You're almost there",
   },
 };
 

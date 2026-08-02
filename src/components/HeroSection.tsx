@@ -1,6 +1,11 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
+import {
+  CompletedCheck,
+  DownloadInstant,
+  SoftPawHeart,
+} from "@/components/icons";
 import { HeroMascot } from "@/components/mascots/HeroMascot";
 
 interface HeroSectionProps {
@@ -56,22 +61,42 @@ export function HeroSection({
       <div className="hero__atmosphere" aria-hidden="true" />
       <div className="hero__stage hero__stage--split">
         <div className="hero__copy">
-          <p className="hero__brand">Paws &amp; Tasks</p>
           <h1 id="hero-heading" className="hero__headline">
-            Build Better Pet Habits, Five Minutes at a Time.
+            Build better pet habits, five minutes at a time.
           </h1>
           <p className="hero__subhead">
-            Join 10,000+ pet parents. Enter your email to get our foundational
-            &ldquo;Welcome Home&rdquo; starter kit instantly, or take the
-            Pathfinder below for a custom toolkit.
+            Join 10,000+ pet parents creating calmer, happier routines. Get your
+            free Welcome Home starter kit instantly — or take the Pathfinder for
+            a custom toolkit.
           </p>
 
           {succeeded ? (
             <div className="hero__success" role="status" aria-live="polite">
-              <p className="hero__success-title">Your toolkit is on the way!</p>
+              <div className="signup-success__icons" aria-hidden="true">
+                <CompletedCheck
+                  className="signup-success__check"
+                  size={36}
+                  variant="success"
+                />
+                <SoftPawHeart
+                  className="signup-success__paw"
+                  size={26}
+                  variant="default"
+                />
+                <DownloadInstant
+                  className="signup-success__download"
+                  size={26}
+                  variant="default"
+                />
+              </div>
+              <p className="hero__success-title">You&apos;re all set!</p>
               <p className="hero__success-body">
-                Check your inbox in the next few minutes for the Welcome Home
-                starter kit.
+                Check your inbox for your PDF kit. Easy-to-use checklists you
+                can start today — five minutes at a time.
+              </p>
+              <p className="hero__success-support">
+                We&apos;re glad you&apos;re here. You and your pet belong in
+                this community.
               </p>
               <button
                 type="button"
@@ -84,7 +109,7 @@ export function HeroSection({
           ) : (
             <form className="hero__form" onSubmit={handleSubmit} noValidate>
               <div className="hero__fields">
-                <label className="field field--hero">
+                <label className="field">
                   <span className="visually-hidden">First Name</span>
                   <input
                     className="field__input"
@@ -97,7 +122,7 @@ export function HeroSection({
                     onChange={(event) => setFirstName(event.target.value)}
                   />
                 </label>
-                <label className="field field--hero">
+                <label className="field">
                   <span className="visually-hidden">Email Address</span>
                   <input
                     className="field__input"
@@ -123,6 +148,10 @@ export function HeroSection({
                 {submitting ? "Sending…" : "Send My Free Kit"}
               </button>
 
+              <p className="hero__micro">
+                No spam. Just useful, bite-sized help for real life with pets.
+              </p>
+
               <p className="hero__proof">
                 Prefer a custom toolkit?{" "}
                 <button
@@ -130,9 +159,8 @@ export function HeroSection({
                   className="hero__link"
                   onClick={onScrollToPathfinder}
                 >
-                  Take the Pathfinder below
+                  Take the Pathfinder below ↓
                 </button>
-                .
               </p>
             </form>
           )}

@@ -73,8 +73,8 @@ export function HeroMascot() {
         </g>
 
         {/* Collar badge */}
-        <rect x="150" y="236" width="60" height="18" rx="9" fill="#7B9482" />
-        <circle cx="180" cy="245" r="7" fill="#D48A72" />
+        <rect x="150" y="236" width="60" height="18" rx="9" fill="#008080" />
+        <circle cx="180" cy="245" r="7" fill="#FF6B35" />
       </svg>
     </div>
   );

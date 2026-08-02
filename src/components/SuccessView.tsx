@@ -1,6 +1,11 @@
 "use client";
 
 import { useRef } from "react";
+import {
+  CompletedCheck,
+  DownloadInstant,
+  SoftPawHeart,
+} from "@/components/icons";
 import { StoryMascot } from "@/components/mascots/StoryMascot";
 import { INSTAGRAM_URL } from "@/lib/bundles";
 import type { Bundle } from "@/lib/types";
@@ -33,7 +38,7 @@ export function SuccessView({ bundle, onDownload }: SuccessViewProps) {
       const ctx = canvas.getContext("2d");
       if (!ctx) return;
 
-      ctx.fillStyle = "#F9F6F0";
+      ctx.fillStyle = "#FAF0E6";
       ctx.fillRect(0, 0, canvas.width, canvas.height);
       ctx.drawImage(image, 0, 0, canvas.width, canvas.height);
 
@@ -68,13 +73,23 @@ export function SuccessView({ bundle, onDownload }: SuccessViewProps) {
     <section className="success" aria-labelledby="success-heading">
       <div className="success__inner">
         <div className="success__copy">
+          <div className="success__icons" aria-hidden="true">
+            <CompletedCheck className="success__check" size={48} variant="success" />
+            <SoftPawHeart className="success__paw" size={32} />
+            <DownloadInstant className="success__download" size={32} />
+          </div>
           <p className="success__brand">Paws &amp; Tasks</p>
           <h2 id="success-heading" className="success__headline">
-            Your toolkit is on the way!
+            You&apos;re all set!
           </h2>
           <p className="success__body">
-            Check your inbox in the next few minutes. While you wait, let
-            everyone know what kind of pet parent you are.
+            Check your inbox for your PDF kit. Your Welcome Home starter kit (or
+            custom toolkit) arrives as easy-to-use checklists you can start
+            today — five minutes at a time.
+          </p>
+          <p className="success__support">
+            We&apos;re glad you&apos;re here. You and your pet belong in this
+            community.
           </p>
 
           <div className="success__actions">

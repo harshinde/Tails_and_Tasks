@@ -20,8 +20,12 @@ export function SegmentationGrid({ onSelect }: SegmentationGridProps) {
     >
       <div className="grid-section__inner">
         <h2 id="grid-heading" className="grid-section__prompt">
-          Select your primary focus for this month:
+          Select your primary focus for your pet care.
         </h2>
+        <p className="grid-section__subhead">
+          Answer a quick question and we&apos;ll build a custom toolkit of
+          checklists and daily habits for you and your pet.
+        </p>
 
         <div className="path-grid" role="list">
           {BUNDLES.map((bundle) => {
@@ -49,6 +53,7 @@ export function SegmentationGrid({ onSelect }: SegmentationGridProps) {
                 <PathIcon bundleId={bundle.id} active={isHovered} />
                 <h3 className="path-card__title">{bundle.title}</h3>
                 <p className="path-card__description">{bundle.description}</p>
+                <p className="path-card__supporting">{bundle.supporting}</p>
               </button>
             );
           })}

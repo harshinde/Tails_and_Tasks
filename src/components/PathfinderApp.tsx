@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { HeroSection } from "@/components/HeroSection";
 import { QuizModal } from "@/components/QuizModal";
 import { SegmentationGrid } from "@/components/SegmentationGrid";
+import { SiteHeader } from "@/components/SiteHeader";
 import { SuccessView } from "@/components/SuccessView";
 import { trackEvent } from "@/lib/analytics";
 import type { Bundle, PathfinderView, QuizAnswers } from "@/lib/types";
@@ -116,7 +117,8 @@ export function PathfinderApp() {
 
   if (view === "success" && selectedBundle) {
     return (
-      <div className="pathfinder">
+      <div id="top" className="pathfinder">
+        <SiteHeader />
         <SuccessView
           bundle={selectedBundle}
           onDownload={handleStoryDownload}
@@ -126,7 +128,9 @@ export function PathfinderApp() {
   }
 
   return (
-    <div className="pathfinder">
+    <div id="top" className="pathfinder">
+      <SiteHeader />
+
       <HeroSection
         onScrollToPathfinder={scrollToPathfinder}
         onSubscribe={handleHeroSubscribe}
