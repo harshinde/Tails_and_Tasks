@@ -6,9 +6,8 @@ import { QuizModal } from "@/components/QuizModal";
 import { SegmentationGrid } from "@/components/SegmentationGrid";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SuccessView } from "@/components/SuccessView";
-import { WelcomeKitForm } from "@/components/WelcomeKitForm";
 import { trackEvent } from "@/lib/analytics";
-import type { Bundle, BundleId, PathfinderView, QuizAnswers } from "@/lib/types";
+import type { Bundle, PathfinderView, QuizAnswers } from "@/lib/types";
 
 async function subscribe(payload: Record<string, unknown>) {
   const response = await fetch("/api/subscribe", {
@@ -28,20 +27,11 @@ async function subscribe(payload: Record<string, unknown>) {
 export function PathfinderApp() {
   const [view, setView] = useState<PathfinderView>("home");
   const [selectedBundle, setSelectedBundle] = useState<Bundle | null>(null);
-  const [selectedId, setSelectedId] = useState<BundleId | null>(null);
   const [modalOpen, setModalOpen] = useState(false);
 
   useEffect(() => {
     trackEvent("page_view");
   }, []);
-
-  function scrollToForm() {
-    const form = document.getElementById("kit-form");
-    form?.scrollIntoView({ behavior: "smooth", block: "start" });
-    window.setTimeout(() => {
-      document.getElementById("kit-email")?.focus();
-    }, 400);
-  }
 
   function scrollToPathfinder() {
     trackEvent("pathfinder_started", { timestamp: Date.now() });
@@ -52,15 +42,10 @@ export function PathfinderApp() {
 
   function handleBundleSelect(bundle: Bundle) {
     setSelectedBundle(bundle);
-    setSelectedId(bundle.id);
     trackEvent("bundle_selected", {
       bundle_id: bundle.id,
       bundle_name: bundle.name,
     });
-  }
-
-  function handleContinue(bundle: Bundle) {
-    setSelectedBundle(bundle);
     setModalOpen(true);
   }
 
@@ -147,20 +132,11 @@ export function PathfinderApp() {
       <SiteHeader />
 
       <HeroSection
-        onScrollToForm={scrollToForm}
         onScrollToPathfinder={scrollToPathfinder}
-      />
-
-      <WelcomeKitForm
         onSubscribe={handleHeroSubscribe}
-        onScrollToPathfinder={scrollToPathfinder}
       />
 
-      <SegmentationGrid
-        selectedId={selectedId}
-        onSelect={handleBundleSelect}
-        onContinue={handleContinue}
-      />
+      <SegmentationGrid onSelect={handleBundleSelect} />
 
       {modalOpen && selectedBundle ? (
         <QuizModal

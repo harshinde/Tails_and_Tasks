@@ -87,10 +87,10 @@ This is the emotional signature of care + connection. Use it sparingly but consi
 - Pair icons with short text labels whenever possible for accessibility.
 - Minimum interactive size: 20–24px; larger (32–48px) for hero, form, and Pathfinder cards.
 - On the homepage specifically:
-  - Place Free Resource / Gift or Email Envelope + Paw with the signup form.
-  - Add the four category icons to the Pathfinder cards.
-  - Use Completed Check + Soft Paw + Heart on the success/confirmation state with clear “Check your inbox for your PDF kit” messaging.
-  - Apply Active/Selected (orange or teal) state when a Pathfinder card is chosen.
+  - Place Free Resource / Gift and Email Envelope + Paw with the **inline hero signup form** (not a separate scroll-to-form step).
+  - Add the four category icons to the Pathfinder cards; **card click opens the quiz immediately**.
+  - Use Completed Check + Soft Paw + Heart (+ Download/Instant Access) on success/confirmation with clear “Check your inbox for your PDF kit” messaging.
+  - Apply Active/Hover (orange or teal) treatment on Pathfinder card interaction.
 - Match rounded corners of icons to the design system tokens (`rounded-md` / `rounded-lg`).
 - Never overcrowd — icons should support the calm, spacious, supportive feeling of the page.
 

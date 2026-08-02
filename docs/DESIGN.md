@@ -155,15 +155,14 @@ Canonical source: **[ICONOGRAPHY.md](./ICONOGRAPHY.md)**
 
 ---
 
-## Homepage Wireframe (Hero + Form + Pathfinder)
+## Homepage Structure (Hero + Form + Pathfinder)
 
-Mobile-first structure for the landing page:
+Mobile-first structure for the landing page. **Keep conversion friction low** — do not add extra click steps.
 
-1. **Header (sticky, minimal)** — Soft Paw + Heart logo + “Paws & Tasks” wordmark left; optional “Join 10,000+” social proof right; cream background; compact height.
-2. **Hero** — Cream canvas; max width ~720–800px; display/h1 headline; body-lg subheadline; large orange “Send My Free Kit” CTA; teal secondary link to Pathfinder; optional pet illustration on desktop.
-3. **Email Signup Form Block** — White card (`shadow-md`, `rounded-lg`); Email Envelope + Paw / gift icon; email fields with teal focus; full-width orange CTA; muted micro-copy.
-4. **Pathfinder** — Soft cream or primary-light section; h2 + short support line; 1 → 2 → 4 column card grid; category icons; hover elevation; selected teal/orange treatment; “Great choice…” micro-copy after selection; continue into quiz/signup.
-5. **Success** — Soft success/teal treatment; Completed Check + Soft Paw + Heart; clear inbox/PDF messaging; optional Instagram/community row.
+1. **Header (sticky, minimal)** — Soft Paw + Heart logo + “Paws & Tasks” wordmark left; “Join 10,000+” social proof right; cream background; compact height.
+2. **Hero + inline signup** — Cream canvas; headline + subheads; white form card in the hero (Gift + Email icons, fields, orange “Send My Free Kit”, micro-copy); teal Pathfinder secondary link; optional pet illustration on desktop. Form submits in place (no separate scroll-to-form step).
+3. **Pathfinder** — Soft cream or primary-light section; h2 + short support line; 1 → 2 → 4 column card grid with category icons. **Card click opens the quiz modal immediately** (no select + Continue intermediate step). Quiz email step shows “Great choice…” micro-copy.
+4. **Success** — Soft success/teal treatment; Completed Check + Soft Paw + Heart + Download/Instant Access; clear inbox/PDF messaging; optional Instagram/community row.
 
 Layout notes: consistent spacing scale rhythm; large touch targets; never crowd; interactive icons use teal default / orange active CTA variants.
 
@@ -201,5 +200,5 @@ Layout notes: consistent spacing scale rhythm; large touch targets; never crowd;
 | Fonts | `src/app/layout.tsx` (next/font) |
 | Header / logo | `src/components/SiteHeader.tsx`, `src/components/icons/*` |
 | Icon system | `docs/ICONOGRAPHY.md` · `src/components/icons/*` |
-| Hero / form / cards / modal | `src/app/globals.css` + homepage components |
+| Hero + inline form / Pathfinder / quiz | `HeroSection`, `SegmentationGrid`, `QuizModal`, `globals.css` |
 | Path PDF palettes | Unchanged — see `PDF_DESIGN.md` |

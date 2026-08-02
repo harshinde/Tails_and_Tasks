@@ -399,15 +399,21 @@ a {
   margin-bottom: 1.35rem;
 }
 
-.hero__actions {
-  display: grid;
-  gap: 0.85rem;
-  justify-items: start;
+.hero__signup-card {
   margin-top: 0.35rem;
+  max-width: 28rem;
+  animation: fade-rise 700ms var(--ease-out) 160ms both;
+}
+
+.hero__form-support {
+  margin: 0 0 0.85rem;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--color-ink);
 }
 
 .hero__proof {
-  margin: 0;
+  margin: 1rem 0 0;
   font-size: 0.95rem;
   color: var(--color-ink-soft);
 }
@@ -458,25 +464,13 @@ a {
   }
 }
 
-/* Email signup form card */
-.signup-section {
-  position: relative;
-  z-index: 1;
-  padding: 0 clamp(1.25rem, 4vw, 2.5rem) clamp(2rem, 5vw, 3.5rem);
-}
-
-.signup-section__inner {
-  width: min(720px, 100%);
-  margin: 0 auto;
-}
-
+/* Email signup form card (inline in hero) */
 .signup-card {
   background: var(--color-surface);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-md);
-  padding: clamp(1.5rem, 4vw, 2rem);
-  animation: fade-rise 700ms var(--ease-out) both;
+  padding: clamp(1.25rem, 3vw, 1.65rem);
 }
 
 .signup-card__icons {
@@ -642,23 +636,6 @@ a {
   .path-grid {
     grid-template-columns: repeat(4, 1fr);
   }
-}
-
-.grid-section__after {
-  display: grid;
-  justify-items: center;
-  gap: 1rem;
-  margin-top: 1.75rem;
-  text-align: center;
-  animation: fade-rise 320ms var(--ease-out) both;
-}
-
-.grid-section__choice {
-  margin: 0;
-  max-width: 34rem;
-  color: var(--color-ink);
-  font-size: 1.05rem;
-  line-height: 1.55;
 }
 
 .path-card {
