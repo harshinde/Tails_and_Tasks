@@ -150,7 +150,7 @@ export function QuizModal({
         <div className="quiz-progress" aria-hidden="true">
           <ProgressTracker
             className="quiz-progress__icon"
-            size={22}
+            size={44}
             segments={3}
             progress={currentStep / 3}
             variant="default"

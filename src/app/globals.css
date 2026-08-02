@@ -272,8 +272,9 @@ a {
 }
 
 .progress-tracker__mark {
-  width: 2rem !important;
-  height: 2rem !important;
+  /* Asset is a wide checklist strip — use landscape box so it stays legible */
+  width: min(100%, 11rem) !important;
+  height: 2.75rem !important;
 }
 
 .progress-tracker__segments {
