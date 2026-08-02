@@ -178,8 +178,8 @@ export function QuizModal({
           ) : (
             <>
               <p className="modal__body">
-                Drop your details below, and we&apos;ll send your custom PDFs
-                straight to your inbox.
+                Great choice. Your custom toolkit is almost ready — just enter
+                your email below.
               </p>
 
               <form className="modal__form" onSubmit={handleSubmit} noValidate>

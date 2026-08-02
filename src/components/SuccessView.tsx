@@ -70,11 +70,16 @@ export function SuccessView({ bundle, onDownload }: SuccessViewProps) {
         <div className="success__copy">
           <p className="success__brand">Paws &amp; Tasks</p>
           <h2 id="success-heading" className="success__headline">
-            Your toolkit is on the way!
+            You&apos;re all set!
           </h2>
           <p className="success__body">
-            Check your inbox in the next few minutes. While you wait, let
-            everyone know what kind of pet parent you are.
+            Check your inbox for your Welcome Home starter kit (or custom
+            toolkit). It arrives as easy-to-use PDF checklists you can start
+            today — five minutes at a time.
+          </p>
+          <p className="success__support">
+            We&apos;re glad you&apos;re here. You and your pet belong in this
+            community.
           </p>
 
           <div className="success__actions">

@@ -9,6 +9,7 @@ export interface Bundle {
   name: string;
   title: string;
   description: string;
+  supporting: string;
   accent: string;
   watercolor: string;
 }
