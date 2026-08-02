@@ -49,8 +49,9 @@ export function StoryMascot({ bundleId, title }: StoryMascotProps) {
         y="78"
         textAnchor="middle"
         fill="#2D3E50"
-        fontFamily="Georgia, 'Times New Roman', serif"
+        fontFamily="'Plus Jakarta Sans', system-ui, sans-serif"
         fontSize="22"
+        fontWeight="800"
         letterSpacing="3"
       >
         PAWS &amp; TASKS
@@ -60,7 +61,7 @@ export function StoryMascot({ bundleId, title }: StoryMascotProps) {
         y="120"
         textAnchor="middle"
         fill="#2D3E50"
-        fontFamily="Georgia, 'Times New Roman', serif"
+        fontFamily="'Plus Jakarta Sans', system-ui, sans-serif"
         fontSize="34"
         fontWeight="700"
       >
@@ -72,7 +73,7 @@ export function StoryMascot({ bundleId, title }: StoryMascotProps) {
         textAnchor="middle"
         fill="#2D3E50"
         opacity="0.72"
-        fontFamily="Arial, sans-serif"
+        fontFamily="Inter, system-ui, sans-serif"
         fontSize="14"
       >
         pet parent path unlocked
