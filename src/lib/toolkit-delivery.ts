@@ -17,6 +17,7 @@ interface DeliverToolkitArgs {
   firstName: string;
   email: string;
   bundleId: BundleId;
+  source: LeadSource;
 }
 
 export async function upsertLeadContact(resend: Resend, args: ContactArgs) {
@@ -82,6 +83,7 @@ export async function sendToolkitEmail({
   firstName,
   email,
   bundleId,
+  source,
 }: DeliverToolkitArgs) {
   const bundle = getBundleById(bundleId);
   if (!bundle) {
@@ -89,20 +91,26 @@ export async function sendToolkitEmail({
   }
 
   const attachment = await loadToolkitAttachment(bundleId);
-  const subject = `Your ${bundle.name} toolkit is ready, ${firstName}`;
+  const isWelcomeHome =
+    source === "homepage_hero" || bundleId === "newcomer";
+  const kitLabel = isWelcomeHome ? "Welcome Home Starter Kit" : bundle.name;
+  const subject = `Your ${kitLabel} is ready, ${firstName}`;
+
+  const intro = isWelcomeHome
+    ? `Your <strong>Welcome Home Starter Kit</strong> is on its way — a foundational pack for safety, routines, health records, and early behavior.`
+    : `Great choice picking <strong>${escapeHtml(bundle.title)}</strong>. Your <strong>${escapeHtml(bundle.name)}</strong> digital toolkit is on its way.`;
 
   const html = `
     <div style="font-family: Georgia, 'Times New Roman', serif; color: #2C2A28; line-height: 1.5; max-width: 560px; margin: 0 auto;">
       <p style="font-size: 28px; font-weight: 700; margin: 0 0 8px;">Paws &amp; Tasks</p>
       <p style="font-size: 18px; margin: 0 0 20px;">Hey ${escapeHtml(firstName)},</p>
       <p style="font-family: Arial, sans-serif; font-size: 16px; color: #444;">
-        Great choice picking <strong>${escapeHtml(bundle.title)}</strong>.
-        Your <strong>${escapeHtml(bundle.name)}</strong> digital toolkit is on its way.
+        ${intro}
       </p>
       ${
         attachment
           ? `<p style="font-family: Arial, sans-serif; font-size: 16px; color: #444;">You'll find your PDF attached to this email.</p>`
-          : `<p style="font-family: Arial, sans-serif; font-size: 16px; color: #444;">We're finalizing the PDF files — this confirmation locks in your ${escapeHtml(bundle.name)} path so we can deliver it next.</p>`
+          : `<p style="font-family: Arial, sans-serif; font-size: 16px; color: #444;">We're finalizing the PDF files — this confirmation locks in your ${escapeHtml(kitLabel)} so we can deliver it next.</p>`
       }
       <p style="font-family: Arial, sans-serif; font-size: 14px; color: #777; margin-top: 28px;">
         Building better habits, one path at a time.<br />
@@ -118,7 +126,7 @@ export async function sendToolkitEmail({
     html,
     tags: [
       { name: "bundle_id", value: bundleId },
-      { name: "source", value: "pathfinder" },
+      { name: "source", value: source },
     ],
     attachments: attachment ? [attachment] : undefined,
   });
