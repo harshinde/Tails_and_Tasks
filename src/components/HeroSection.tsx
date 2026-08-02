@@ -8,6 +8,7 @@ import {
   FreeResourceGift,
   SoftPawHeart,
 } from "@/components/icons";
+import { HeroVisualCrossfade } from "@/components/HeroVisualCrossfade";
 
 interface HeroSectionProps {
   onScrollToPathfinder: () => void;
@@ -192,18 +193,7 @@ export function HeroSection({
         </div>
 
         <div className="hero__visual-panel">
-          <figure className="hero__photo-frame">
-            {/* Decorative companion image — alt left empty because headline carries meaning */}
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              className="hero__photo"
-              src="/images/hero-pet-parents.jpg"
-              alt=""
-              width={720}
-              height={900}
-              decoding="async"
-            />
-          </figure>
+          <HeroVisualCrossfade />
         </div>
       </div>
     </section>
