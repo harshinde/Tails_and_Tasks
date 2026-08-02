@@ -1,15 +1,14 @@
 ---
-name: PetBond Community
-description: Warm, trustworthy design system for a pet-parent relationship and community platform. Optimistic, approachable, and emotionally supportive.
-version: 1.0
-applied_to: Paws & Tasks (pawsandtasks.com)
+name: Paws & Tasks (PetBond Community System)
+description: Warm, trustworthy design system for pawsandtasks.com — a pet-parent platform focused on free pet care checklists, email sign-ups, the Pathfinder quiz, and PDF toolkit delivery. Optimistic, approachable, and emotionally supportive.
+version: 1.2
+site: https://pawsandtasks.com/
 ---
 
-# DESIGN.md — PetBond Community
+# DESIGN.md — Paws & Tasks (PetBond Community System)
 
-Warm, trustworthy design system for a pet-parent relationship and community platform. Optimistic, approachable, and emotionally supportive.
+Warm, trustworthy design system for [pawsandtasks.com](https://pawsandtasks.com/) — free pet care checklists, email sign-ups, the Pathfinder quiz, and PDF toolkit delivery. Optimistic, approachable, and emotionally supportive.
 
-**Applied to:** Paws & Tasks landing / Pathfinder MVP  
 **Related:** [PRD](./PRD.md) · [Architecture](./ARCHITECTURE.md) · [PDF Design](./PDF_DESIGN.md)
 
 > Note: Path-specific PDF toolkits keep their own archetype palettes (see `PDF_DESIGN.md`). This file governs the **website, UI, and community surfaces**.
@@ -88,8 +87,11 @@ Fallbacks: `system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif
 **Personality**: Optimistic, trustworthy, warm, and community-oriented.  
 The design should feel like a friendly neighborhood park walk with other pet parents — calm teal trust + playful orange energy on a soft cream canvas.
 
+**Site Context (pawsandtasks.com)**:  
+Primary goal is email list growth via free resources. Users can either grab the foundational “Welcome Home” starter kit instantly or take the Pathfinder quiz for a custom toolkit. All resources are delivered as PDF checklists via email. Attract traffic from Instagram and similar channels.
+
 Target feeling: “This is a safe, supportive place where I and my pet belong.”  
-Avoid clinical, cold, corporate, or overly childish aesthetics. Prioritize emotional connection, readability, and generous breathing room so content (stories, advice, photos) can shine.
+Avoid clinical, cold, corporate, or overly childish aesthetics. Prioritize emotional connection, readability, and generous breathing room.
 
 Style keywords: Approachable, soft, human, photographic, supportive.
 
@@ -97,104 +99,108 @@ Style keywords: Approachable, soft, human, photographic, supportive.
 
 ## Colors
 
-- **Primary Teal (`#008080`)**: Main brand color for navigation, links, active states, trust signals, and secondary buttons. Use for calm authority.
-- **Accent Warm Orange (`#FF6B35`)**: Primary CTAs, highlights, badges, playful moments, and energy. Use sparingly for maximum impact.
-- **Background Cream (`#FAF0E6`)**: Page-level background. Creates warmth and reduces eye strain compared to pure white.
-- **Surface White (`#FFFFFF`)**: Cards, modals, form containers, elevated content.
-- **Foreground Dark (`#2D3E50` / `#1C3245`)**: Primary text. High contrast on cream/white.
-- **Muted Warm Gray (`#9E9E9E`)**: Secondary text, placeholders, borders, icons at rest.
+- **Primary Teal (`#008080`)**: Navigation, links, active Pathfinder states, trust signals.
+- **Accent Warm Orange (`#FF6B35`)**: Primary CTAs (“Send My Free Kit”), highlights, selected states.
+- **Background Cream (`#FAF0E6`)**: Page-level background.
+- **Surface White (`#FFFFFF`)**: Signup form card, Pathfinder cards, elevated content.
+- **Foreground Dark (`#2D3E50`)**: Primary text.
+- **Muted Warm Gray (`#9E9E9E`)**: Secondary text, placeholders, borders.
 
-Always maintain WCAG AA contrast minimums. Prefer soft tonal shifts over harsh borders.
+Always maintain WCAG AA contrast. Prefer soft tonal shifts.
 
 ---
 
 ## Typography
 
-**Primary pairing**:
-- Headings & Display → **Plus Jakarta Sans** (friendly rounded terminals, modern warmth)
-- Body, UI, labels → **Inter** (excellent screen legibility and neutrality)
+- Headings & Display → **Plus Jakarta Sans** (friendly rounded terminals)
+- Body, UI, labels → **Inter**
 
-**Rules**:
-- Use weight contrast for hierarchy (700–800 for headings, 400–500 for body).
-- Keep line lengths comfortable (45–75 characters ideal for body).
-- Slight negative letter-spacing on large headings only.
-- Never use decorative or script fonts for body or UI text.
+Rules: Strong weight contrast, comfortable line lengths (45–75 characters), no decorative fonts for body/UI.
 
 ---
 
-## Components
+## Iconography
 
-**Buttons**:
-- Primary: Accent orange background, white text, `rounded-md` or `rounded-lg`, medium weight.
-- Secondary: Teal outline or soft teal fill, dark text.
-- Ghost: Transparent with teal or dark text.
-- Always ≥ 44px touch target.
+**Style**: Soft rounded terminals, consistent ~1.5–2px stroke, 24×24 grid, organic-friendly shapes.
 
-**Cards**:
-- White surface, subtle `shadow-sm` or `shadow-md`, `rounded-lg`, generous internal padding (`md`–`lg`).
-- Soft hover elevation.
+**Signature**: Soft Paw + Heart (logo mark, favicon, decorative accent).
 
-**Inputs & Forms**:
-- Clean borders in muted/warm gray, focus ring in primary teal.
-- Rounded corners (`md`), comfortable padding.
+**Core set for this site**:
+- Checklist Paw
+- Completed Check
+- Free Resource / Gift
+- Email Envelope + Paw
+- Download / Instant Access
+- Progress Tracker (for Pathfinder)
+- Category icons for the four Pathfinder cards (Newcomer, Guide, Guardian, Best Friend)
+- Community / Join
 
-**Navigation**:
-- Clean, spacious. Teal for active/current items. Orange only for primary action (e.g., “Join Community” / hero CTA).
+**Color variants**:
+- Default: Teal or Muted Gray
+- Hover: Darker teal or soft teal fill
+- Active / Selected / CTA: Warm Orange
+- Success: Success Green or teal + check
+- Disabled: Muted at reduced opacity
 
-**Community elements** (feeds, comments, profiles — future):
-- Soft surfaces, clear visual hierarchy, ample whitespace between posts.
-- Avatar circles with subtle borders.
+---
+
+## Components (Site-Specific)
+
+**Primary Button** (“Send My Free Kit”): Accent orange background, white text, rounded-lg, ≥44px height.
+
+**Pathfinder Cards**: White surface, rounded-lg, soft shadow, generous padding. Hover elevation. Selected state uses teal border or soft fill + orange accent.
+
+**Email Form**: Clean muted border, teal focus ring, rounded-md, comfortable padding inside a white card.
+
+**Success State**: Soft success treatment with Completed Check + clear “Check your inbox for your PDF” messaging.
 
 ---
 
 ## Layout Principles
 
-- Mobile-first, generous whitespace (“never crowd”).
-- Consistent vertical rhythm using the spacing scale.
-- Prefer soft cards and tonal backgrounds over heavy dividers.
-- Max content width ~720–800px for readable long-form community content; wider for marketing/landing grids.
-- Photography of real pets should breathe — avoid tight cropping or competing colors.
+- Mobile-first, generous whitespace.
+- Max content width ~720–800px for readability.
+- Soft cards and tonal backgrounds preferred over heavy dividers.
+- Real pet photography (named when possible) should breathe.
+- Hero + Form + Pathfinder should feel calm and low-friction.
 
 ---
 
-## Depth & Elevation
+## Homepage Wireframe (Hero + Form + Pathfinder)
 
-Soft, natural shadows only (see token values). Prefer elevation through subtle background shifts (cream → white) over strong drop shadows. Avoid heavy skeuomorphism.
+Mobile-first structure for the landing page:
+
+1. **Header (sticky, minimal)** — Soft Paw + Heart logo + “Paws & Tasks” wordmark left; optional “Join 10,000+” social proof right; cream background; compact height.
+2. **Hero** — Cream canvas; max width ~720–800px; display/h1 headline; body-lg subheadline; large orange “Send My Free Kit” CTA; teal secondary link to Pathfinder; optional pet illustration on desktop.
+3. **Email Signup Form Block** — White card (`shadow-md`, `rounded-lg`); Email Envelope + Paw / gift icon; email fields with teal focus; full-width orange CTA; muted micro-copy.
+4. **Pathfinder** — Soft cream or primary-light section; h2 + short support line; 1 → 2 → 4 column card grid; category icons; hover elevation; selected teal/orange treatment; “Great choice…” micro-copy after selection; continue into quiz/signup.
+5. **Success** — Soft success/teal treatment; Completed Check + Soft Paw + Heart; clear inbox/PDF messaging; optional Instagram/community row.
+
+Layout notes: consistent spacing scale rhythm; large touch targets; never crowd; interactive icons use teal default / orange active CTA variants.
 
 ---
 
 ## Do’s and Don’ts
 
 **Do**:
-- Use real pet photography with names and stories (when available).
-- Keep CTAs in accent orange and limited in number.
-- Maintain high contrast text.
-- Give community content generous space.
-- Use soft rounded corners everywhere for approachability.
+- Use the dual path (instant kit or Pathfinder) clearly.
+- Emphasize PDF-via-email delivery.
+- Keep CTAs limited and in accent orange.
+- Give Pathfinder cards clear icons and breathing room.
+- Maintain high contrast and soft rounded language everywhere.
 
 **Don’t**:
-- Use pure black text or pure white backgrounds as default page canvas.
-- Overuse the orange accent.
-- Apply sharp 0px radius or heavy geometric modernism.
+- Overuse orange.
+- Create dense or stressful layouts.
+- Use pure black text or pure white as default backgrounds.
 - Mix more than two type families.
-- Create dense, high-information-density layouts that feel stressful.
-
----
-
-## Responsive Behavior
-
-- Touch targets minimum 44×44px.
-- Stack cards and reduce columns early on mobile.
-- Increase body line-height slightly on small screens.
-- Ensure cream background remains comfortable in both light mode (primary) and any future dark mode.
+- Make the quiz feel long or clinical.
 
 ---
 
 ## Agent Prompt Guide
 
-When generating UI:
-
-> Follow the PetBond Community DESIGN.md strictly. Use Plus Jakarta Sans for all headings and Inter for body/UI. Background is cream (#FAF0E6), cards are white, primary actions use warm orange (#FF6B35), trust elements use teal (#008080). Keep the interface soft, warm, spacious, and emotionally supportive. Prioritize readability and real pet photography.
+> Follow this DESIGN.md strictly for pawsandtasks.com. Use Plus Jakarta Sans for headings and Inter for body. Background is cream (#FAF0E6), cards are white, primary CTAs use warm orange (#FF6B35), trust and active states use teal (#008080). Keep everything soft, warm, spacious, and supportive. Support the existing dual path: email signup for the Welcome Home starter kit and the four-option Pathfinder quiz. All resources deliver as PDFs via email. Use the defined soft rounded icon set with the listed color variants.
 
 ---
 
@@ -204,5 +210,6 @@ When generating UI:
 | --- | --- |
 | CSS variables | `src/app/globals.css` `:root` |
 | Fonts | `src/app/layout.tsx` (next/font) |
-| Buttons / forms / cards / hero / modal | `src/app/globals.css` component classes |
+| Header / logo | `src/components/SiteHeader.tsx`, `src/components/icons/*` |
+| Hero / form / cards / modal | `src/app/globals.css` + homepage components |
 | Path PDF palettes | Unchanged — see `PDF_DESIGN.md` |

@@ -1,6 +1,8 @@
 "use client";
 
 import { useRef } from "react";
+import { CompletedCheck } from "@/components/icons/CompletedCheck";
+import { SoftPawHeart } from "@/components/icons/SoftPawHeart";
 import { StoryMascot } from "@/components/mascots/StoryMascot";
 import { INSTAGRAM_URL } from "@/lib/bundles";
 import type { Bundle } from "@/lib/types";
@@ -68,13 +70,17 @@ export function SuccessView({ bundle, onDownload }: SuccessViewProps) {
     <section className="success" aria-labelledby="success-heading">
       <div className="success__inner">
         <div className="success__copy">
+          <div className="success__icons" aria-hidden="true">
+            <CompletedCheck className="success__check" />
+            <SoftPawHeart className="success__paw" />
+          </div>
           <p className="success__brand">Paws &amp; Tasks</p>
           <h2 id="success-heading" className="success__headline">
             You&apos;re all set!
           </h2>
           <p className="success__body">
-            Check your inbox for your Welcome Home starter kit (or custom
-            toolkit). It arrives as easy-to-use PDF checklists you can start
+            Check your inbox for your PDF kit. Your Welcome Home starter kit (or
+            custom toolkit) arrives as easy-to-use checklists you can start
             today — five minutes at a time.
           </p>
           <p className="success__support">

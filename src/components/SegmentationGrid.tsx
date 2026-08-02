@@ -7,10 +7,18 @@ import type { Bundle, BundleId } from "@/lib/types";
 
 interface SegmentationGridProps {
   onSelect: (bundle: Bundle) => void;
+  onContinue: (bundle: Bundle) => void;
+  selectedId?: BundleId | null;
 }
 
-export function SegmentationGrid({ onSelect }: SegmentationGridProps) {
+export function SegmentationGrid({
+  onSelect,
+  onContinue,
+  selectedId = null,
+}: SegmentationGridProps) {
   const [hovered, setHovered] = useState<BundleId | null>(null);
+  const selectedBundle =
+    BUNDLES.find((bundle) => bundle.id === selectedId) ?? null;
 
   return (
     <section
@@ -27,16 +35,24 @@ export function SegmentationGrid({ onSelect }: SegmentationGridProps) {
           checklists and daily habits for you and your pet.
         </p>
 
-        <div className="path-grid" role="list">
+        <div
+          className="path-grid"
+          role="radiogroup"
+          aria-labelledby="grid-heading"
+        >
           {BUNDLES.map((bundle) => {
             const isHovered = hovered === bundle.id;
+            const isSelected = selectedId === bundle.id;
 
             return (
               <button
                 key={bundle.id}
                 type="button"
-                role="listitem"
-                className={`path-card${isHovered ? " is-hovered" : ""}`}
+                role="radio"
+                aria-checked={isSelected}
+                className={`path-card${isHovered ? " is-hovered" : ""}${
+                  isSelected ? " is-selected" : ""
+                }`}
                 style={
                   {
                     "--card-accent": bundle.accent,
@@ -50,7 +66,7 @@ export function SegmentationGrid({ onSelect }: SegmentationGridProps) {
                 onClick={() => onSelect(bundle)}
               >
                 <div className="path-card__wash" aria-hidden="true" />
-                <PathIcon bundleId={bundle.id} active={isHovered} />
+                <PathIcon bundleId={bundle.id} active={isHovered || isSelected} />
                 <h3 className="path-card__title">{bundle.title}</h3>
                 <p className="path-card__description">{bundle.description}</p>
                 <p className="path-card__supporting">{bundle.supporting}</p>
@@ -58,6 +74,22 @@ export function SegmentationGrid({ onSelect }: SegmentationGridProps) {
             );
           })}
         </div>
+
+        {selectedBundle ? (
+          <div className="grid-section__after" role="status" aria-live="polite">
+            <p className="grid-section__choice">
+              Great choice. Your custom toolkit is almost ready — just enter
+              your email below.
+            </p>
+            <button
+              type="button"
+              className="btn btn--primary"
+              onClick={() => onContinue(selectedBundle)}
+            >
+              Continue
+            </button>
+          </div>
+        ) : null}
       </div>
     </section>
   );
